@@ -1,0 +1,3 @@
+add_library(kontiki Object.cpp
+                    GameObject.cpp
+           )
