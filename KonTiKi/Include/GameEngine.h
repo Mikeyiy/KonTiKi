@@ -49,17 +49,15 @@ namespace KonTiKi
     {
     public:
         GameEngine( void ); 
-      
-
-        ~GameEngine( void ) {};
+        ~GameEngine( void );
     private:
-    	void Update( float dt );
+    	void Update( void );
     	void Init( void );
 
     private:
         Renderer m_renderer;
         Input m_input;
-    	std::vector<System*> m_systems;
+        GraphicsSystem* m_pGraphicsSystem;
     };
 }
 

@@ -18,31 +18,25 @@
 */
 
 #include <iostream>
-#include "GraphicsSystem.h"
+#include <cassert>
+#include <GraphicsSystem.h>
 
 namespace KonTiKi
 {
-    void GraphicsSystem::ProcessGameObject( GameObject& gameObject, float dt )
+    void GraphicsSystem::Update(void)
     {
-    	std::cout << "ProcessGameObject" << std::endl;
-        // Culls and  arranges renderables in a queue for each camera.
-        // Aranges every camera in a queue too.
+        std::vector<Camera*>::iterator cam_iterator = s_cameras.begin();
+        for( ; cam_iterator != s_cameras.end(); ++cam_iterator )
+        { 
+            Camera* pCamera = *cam_iterator;
+            assert( pCamera );
 
-        // 
-        /*if( gameObject.meshFilter && gameObject.meshRenderer )
-        {
-            ArrangeRenderable( gameObject.meshFilter.mesh, gameObject.meshRenderer.materials, gameObject.transform );
+            std::list<GameObject*>::iterator iterator = s_gameObjects.begin();
+            for( ; iterator != s_gameObjects.end(); ++iterator )
+            {
+                GameObject* pGameObject = *iterator;
+                assert( pGameObject );
+            }
         }
-        if( gameObject.skinnedMeshRender )    
-        {
-            
-        }*/ 
     }
-/*
-    void GraphicsSystem::ArrangeRenderable( MeshFilter& meshfilter, MeshRenderer& meshrenderer, Transform& transform )
-    {
-        // Groups renderalbe data according to material instances.  
-        // Meshes appends to different VBO object. 
-       
-    }*/
 }

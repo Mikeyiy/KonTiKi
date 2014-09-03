@@ -26,7 +26,7 @@
 
 namespace KonTiKi
 {
-	class GameObject;
+    class GameObject;
     class System : public Object
     {
     public:

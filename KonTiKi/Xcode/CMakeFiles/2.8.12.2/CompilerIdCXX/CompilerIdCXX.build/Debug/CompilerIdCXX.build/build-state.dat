@@ -1,0 +1,122 @@
+TCompilerIdCXX
+v6
+r1
+cCheck dependencies
+cCompileC CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX normal i386
+cPhaseScriptExecution Run\ Script /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c00000000530295C100000000000000AA
+t1392678337
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c00000000535D1B0F000000000000044C
+t1398610703
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000535D1B0F00000000000001DE
+t1398610703
+s478
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+c000000005401FDDB0000000000002E45
+t1409416667
+s11845
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX
+t2
+s0
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+t1409416668
+s3468
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList
+c000000005401FDDC00000000000000C0
+t1409416668
+s192
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+c000000005401FDDC000000000000002A
+t1409416668
+s42
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesf566205c35b2b941^b7292a5c35b2b941^---0#1#1#--18"Check dependencies36"02445D7D-2C8A-450A-AF80-74CA018944DB-
+
+CCompileC CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s431109468.166779
+e431109468.191263
+r1
+xCompileC
+xCompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Compile /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp178"CompileC CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler86cb2a5c35b2b941^c7f4305c35b2b941^---0#0#1#-19%DVTDocumentLocation2@134"file:///Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp0000000000000000^2972"CompileC CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/i386 -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources -F/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX -MMD -MT dependencies -MF /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.d --serialize-diagnostics /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.dia -c /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp -o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o36"3A450A4D-5565-41FD-B440-A3E088165444-
+bF996C855-C652-4F04-89DB-B14B3C12F17F
+
+CLd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX normal i386
+s431109468.192167
+e431109468.218646
+r1
+xLd
+x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX
+xnormal
+xi386
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.eprintf.a
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Link /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX28"Ld CompilerIdCXX normal i386fe48315c35b2b941^72f9375c35b2b941^---0#0#1#--1211"Ld CompilerIdCXX normal i386    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX -F/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX -filelist /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList -mmacosx-version-min=10.9 -Xlinker -dependency_info -Xlinker /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX_dependency_info.dat -o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX36"38A67043-4974-4CC1-A86B-E8CD27022D32-
+bF996C855-C652-4F04-89DB-B14B3C12F17F
+
+CPhaseScriptExecution Run\ Script /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+s431109468.220440
+e431109468.235174
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+oGCC_VERSION=com.apple.compilers.llvm.clang.1_0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'113"PhaseScriptExecution Run\ Script CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.shbaf7385c35b2b941^f4343c5c35b2b941^-47"GCC_VERSION=com.apple.compilers.llvm.clang.1_01(21%IDEActivityLogMessage2@47"GCC_VERSION=com.apple.compilers.llvm.clang.1_0-431109468#0#47#-0#-----0#0#1#--427"PhaseScriptExecution Run\ Script CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX    /bin/sh -c /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/2.8.12.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh36"06F885E0-B063-4871-A556-D969D2F8ADBA-
+bF996C855-C652-4F04-89DB-B14B3C12F17F
+

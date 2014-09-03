@@ -1,0 +1,105 @@
+Tkontiki
+v6
+r1
+cCheck dependencies
+cCompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/libkontiki.a normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c00000000530295C100000000000000AA
+t1392678337
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c00000000535D1B0F000000000000044C
+t1398610703
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000535D1B0F00000000000001DE
+t1398610703
+s478
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp
+c000000005401FC1D000000000000006A
+t1409416221
+s106
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp
+c000000005401FA69000000000000002C
+t1409415785
+s44
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/libkontiki.a
+t2
+s0
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o
+t1409416895
+s3016
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o
+t1409416895
+s1776
+
+N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/kontiki.LinkFileList
+c000000005401FEBF0000000000000114
+t1409416895
+s276
+
+CBuild AST from /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp
+r0
+
+CBuild AST from /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies0d6f723f36b2b941^f5d8723f36b2b941^---0#1#1#--18"Check dependencies36"1ADC8E45-71DA-4D2D-8DDD-4B53EFFD8001-
+
+CCompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s431109695.449067
+e431109695.466486
+r1
+xCompileC
+xXcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o
+x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include/GameObject.h
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include/Object.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp172"CompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o Source/Core/GameObject.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler0c06733f36b2b941^ec6d773f36b2b941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp0000000000000000^2430"CompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o Source/Core/GameObject.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -Wno-sign-conversion -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/include -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/DerivedSources/x86_64 -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug -MMD -MT dependencies -MF /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.d --serialize-diagnostics /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.dia -c /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/GameObject.cpp -o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/GameObject.o36"DCFB1AB1-7AE9-4538-BA6F-F747F0432FB9-
+b9F715A61-B2E5-479B-97BB-FD3E63D5FE18
+
+CCompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s431109695.449241
+e431109695.465582
+r1
+xCompileC
+xXcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o
+x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp
+d/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include/Object.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp164"CompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o Source/Core/Object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerb20e733f36b2b941^be32773f36b2b941^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp0000000000000000^2406"CompileC Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o Source/Core/Object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -Wno-sign-conversion -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/include -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/DerivedSources/x86_64 -I/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug -MMD -MT dependencies -MF /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.d --serialize-diagnostics /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.dia -c /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Source/Core/Object.cpp -o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o36"E8EF842E-E643-4FE6-B6DE-B9BC08FE608F-
+b9F715A61-B2E5-479B-97BB-FD3E63D5FE18
+
+CLibtool /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/libkontiki.a normal x86_64
+s431109695.467171
+e431109695.472507
+r1
+xLibtool
+x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/libkontiki.a
+xnormal
+xx86_64
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o has no symbols
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection46"Libtool Xcode/Debug/libkontiki.a normal x86_6446"Libtool Xcode/Debug/libkontiki.a normal x86_64eca3773f36b2b941^40f8783f36b2b941^-253"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/Object.o has no symbols-0#0#1#--726"Libtool Xcode/Debug/libkontiki.a normal x86_64    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug -filelist /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/kontiki.build/Objects-normal/x86_64/kontiki.LinkFileList -o /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/Debug/libkontiki.a36"F2FAE1C5-1064-4739-9077-E963A1BC2D2E-
+b9F715A61-B2E5-479B-97BB-FD3E63D5FE18
+

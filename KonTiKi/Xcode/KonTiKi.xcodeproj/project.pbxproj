@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		00E85D13D5EC41D8877518CD /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 66D45A9D24904895B515FA45 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				5660F45624C043E0BC12BE2D /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		82032BDF0A6C4E8899676A2C /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8DFB2F8098894059A5F78470 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				E6238B85A4C54695A877C31A /* CMake Rules */,
+			);
+			dependencies = (
+				5EC70E6CE4CB43F4AD34C528 /* PBXTargetDependency */,
+				F81E30BF033A4194A641BABF /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		F440367B2AA7435C97129777 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 010B3274390A4B509B4B31F2 /* GameObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		FA232E2FE161472DBFB3BBF2 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFADC124A97A4116A86FABCC /* Object.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2D52DF11B4E5411699484AB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DF5EFB31C644836931EF067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00E85D13D5EC41D8877518CD;
+			remoteInfo = ZERO_CHECK;
+		};
+		D641EFF5556F4C389F522D1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DF5EFB31C644836931EF067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2C1E689C6344410ABA31091;
+			remoteInfo = kontiki;
+		};
+		E0EDAA661040406CA5472B0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DF5EFB31C644836931EF067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00E85D13D5EC41D8877518CD;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010B3274390A4B509B4B31F2 /* GameObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GameObject.cpp; path = Source/Core/GameObject.cpp; sourceTree = SOURCE_ROOT; };
+		B00BBAC6EA854A42A3329377 /* libkontiki.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libkontiki.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFADC124A97A4116A86FABCC /* Object.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Object.cpp; path = Source/Core/Object.cpp; sourceTree = SOURCE_ROOT; };
+		D0393E67ADC34E91BCAD04FF /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		44F2926B116040589355ED31 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BD410519DF8E46069439922F /* ALL_BUILD */,
+				52A8EDD531BA4479BEC80C40 /* ZERO_CHECK */,
+				6092ADE96CD84BB98B0126A1 /* kontiki */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		52A8EDD531BA4479BEC80C40 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				FB249F73C48F40569530FEF0 /* CMake Rules */,
+				D0393E67ADC34E91BCAD04FF /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		5A0553049F2F43A798E5EF34 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				010B3274390A4B509B4B31F2 /* GameObject.cpp */,
+				CFADC124A97A4116A86FABCC /* Object.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6092ADE96CD84BB98B0126A1 /* kontiki */ = {
+			isa = PBXGroup;
+			children = (
+				5A0553049F2F43A798E5EF34 /* Source Files */,
+				D0393E67ADC34E91BCAD04FF /* CMakeLists.txt */,
+			);
+			name = kontiki;
+			sourceTree = "<group>";
+		};
+		8AA0535070C547DBAF3B0FD6 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9B2B9ED860CF44BEB06F9B42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B00BBAC6EA854A42A3329377 /* libkontiki.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD410519DF8E46069439922F /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				8AA0535070C547DBAF3B0FD6 /* CMake Rules */,
+				D0393E67ADC34E91BCAD04FF /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		CC768F672BFC45508D1304FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EF50DEC9985F4F0F82B455BC = {
+			isa = PBXGroup;
+			children = (
+				44F2926B116040589355ED31 /* Sources */,
+				CC768F672BFC45508D1304FA /* Resources */,
+				9B2B9ED860CF44BEB06F9B42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB249F73C48F40569530FEF0 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2C1E689C6344410ABA31091 /* kontiki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78439FB36D8B489C8E3A3581 /* Build configuration list for PBXNativeTarget "kontiki" */;
+			buildPhases = (
+				3CF5CFE38C9B4089B92F337D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E071D883DBE4E61B200AF97 /* PBXTargetDependency */,
+			);
+			name = kontiki;
+			productName = kontiki;
+			productReference = B00BBAC6EA854A42A3329377 /* libkontiki.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DF5EFB31C644836931EF067 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = 5722CB9600E84A3798F93F8F /* Build configuration list for PBXProject "KonTiKi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EF50DEC9985F4F0F82B455BC;
+			projectDirPath = ..;
+			projectRoot = "";
+			targets = (
+				82032BDF0A6C4E8899676A2C /* ALL_BUILD */,
+				00E85D13D5EC41D8877518CD /* ZERO_CHECK */,
+				E2C1E689C6344410ABA31091 /* kontiki */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5660F45624C043E0BC12BE2D /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode -f /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		E6238B85A4C54695A877C31A /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode -f /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3CF5CFE38C9B4089B92F337D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F440367B2AA7435C97129777 /* GameObject.cpp in Sources */,
+				FA232E2FE161472DBFB3BBF2 /* Object.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EC70E6CE4CB43F4AD34C528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00E85D13D5EC41D8877518CD /* ZERO_CHECK */;
+			targetProxy = E0EDAA661040406CA5472B0F /* PBXContainerItemProxy */;
+		};
+		7E071D883DBE4E61B200AF97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00E85D13D5EC41D8877518CD /* ZERO_CHECK */;
+			targetProxy = 2D52DF11B4E5411699484AB5 /* PBXContainerItemProxy */;
+		};
+		F81E30BF033A4194A641BABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2C1E689C6344410ABA31091 /* kontiki */;
+			targetProxy = D641EFF5556F4C389F522D1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0BCAF31713774BA080E1AD58 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		22ECDD1950CC404996B9AEA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_CPLUSPLUSFLAGS = "    ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = kontiki;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		330AFF4F4B6E4E02ADFAD3F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/build;
+			};
+			name = Release;
+		};
+		38DDB8F23A344EFFA5C1E15B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = kontiki;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		3922385132614CD0BBCD23D4 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		437D367D0E3B46059D7B6174 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		45AFE9803B634979B43E1330 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		48BBB0134B5F42FF8F48E53B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		5095BAEAEBC6405D8ABAA998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		626D2085D2DC475CBD04BB76 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = kontiki;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		7B45A66EE45D4D4885AEA1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = kontiki;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		859FE8DE92B049048CF450E7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		8A369E1D4B9E41139A05513D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/build;
+			};
+			name = Debug;
+		};
+		B8EE783B28764716A23435E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		BAB89023CCF54BE5B8C3272C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Include;
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		D7F249B37A8C4DF4A28EA3C3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/build;
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5722CB9600E84A3798F93F8F /* Build configuration list for PBXProject "KonTiKi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A369E1D4B9E41139A05513D /* Debug */,
+				330AFF4F4B6E4E02ADFAD3F4 /* Release */,
+				D7F249B37A8C4DF4A28EA3C3 /* MinSizeRel */,
+				859FE8DE92B049048CF450E7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		66D45A9D24904895B515FA45 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB89023CCF54BE5B8C3272C /* Debug */,
+				B8EE783B28764716A23435E8 /* Release */,
+				45AFE9803B634979B43E1330 /* MinSizeRel */,
+				437D367D0E3B46059D7B6174 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		78439FB36D8B489C8E3A3581 /* Build configuration list for PBXNativeTarget "kontiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22ECDD1950CC404996B9AEA6 /* Debug */,
+				7B45A66EE45D4D4885AEA1F4 /* Release */,
+				38DDB8F23A344EFFA5C1E15B /* MinSizeRel */,
+				626D2085D2DC475CBD04BB76 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8DFB2F8098894059A5F78470 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5095BAEAEBC6405D8ABAA998 /* Debug */,
+				48BBB0134B5F42FF8F48E53B /* Release */,
+				0BCAF31713774BA080E1AD58 /* MinSizeRel */,
+				3922385132614CD0BBCD23D4 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DF5EFB31C644836931EF067 /* Project object */;
+}

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Include/Component.h
+Object.h
+../Include/Object.h
+
+../Include/GameEngine.h
+vector
+-
+Object.h
+../Include/Object.h
+
+../Include/GameObject.h
+type_traits
+-
+vector
+-
+Object.h
+../Include/Object.h
+Component.h
+../Include/Component.h
+
+../Include/Object.h
+
+/Users/Milc1/Documents/EngineDevelopment/KonTiKi/Source/Test/TestInConsole.cpp
+iostream
+-
+GameEngine.h
+-
+GameObject.h
+-
+

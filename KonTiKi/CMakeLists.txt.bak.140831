@@ -1,0 +1,8 @@
+project(KonTiKi)
+
+include_directories(Include)
+
+add_library(kontiki Source/Core/Object.cpp
+                    Source/Core/GameObject.cpp
+           )
+

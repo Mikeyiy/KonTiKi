@@ -33,45 +33,27 @@ namespace KonTiKi
 
     void GameEngine::Init( void )
     {
-        // m_renderer = new Renderer();
-        // m_renderer.Start();
+        m_pRenderer = new Renderer();
+        m_pRenderer->Start();
 
-        // m_input = new Input();
-        // m_input.Start(); 
+        m_pInput = new Input();
+        m_pInput->Start(); 
 
         // 初始化各个系统模块。
-        GraphicsSystem* pGraphicsSystem = new GraphicsSystem();
-        m_systems.push_back( pGraphicsSystem );
-
-        std::cout << " Init " << std::endl;
-
-        // Load Scenes
-        // Main Loop.
-        // while( true )
-        // {
-        //     Update( Time.deltaTime );
-        // }
-
-        // Destroy each systems.
-
-        // m_input.End();
-        // m_renderer.End();
+        m_pGraphicsSystem = new GraphicsSystem();
     }
 
-    void GameEngine::Update( float dt )
+    void GameEngine::Update(void)
     {
-        std::vector<System*>::iterator iterator = m_systems.begin();
+        m_pGraphicsSystem->Update();
+    }
 
-    	//for( size_t i = 0; i != m_systems.size(); ++i )
-        for( ; iterator != m_systems.end(); ++iterator )
-    	{
-            System* pSystem =  *iterator;
-            assert( pSystem != nullptr );
+    void GameEngine::Destroy(void)
+    {
+        delete m_pGraphicsSystem;
 
-            pSystem->Update( dt );
-            std::cout << " Update " << std::endl;
-    	}
-
+        m_pInput->Stop();
+        m_pRenderer->Stop();
     }
 
     void GameEngine::MainLoop( void )
