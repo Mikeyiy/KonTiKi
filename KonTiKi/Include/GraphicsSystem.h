@@ -4,7 +4,9 @@
 *
 * 文件名称： 
 * 文件标识：
-* 文件摘要：
+* 文件摘要：1. Culls and arranges every renderable for each camera and arranges camera according to it depth.
+*           2. Transforms each renderable data per camera to Rendering Commands(the commands is independent of the platforms).           
+*           3. Once constructs a group command completely, then commits it to the renderer(the renderer is dependent of the platforms).
 * 
 * 当前版本：
 * 摘要：

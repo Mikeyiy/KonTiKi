@@ -25,20 +25,24 @@ namespace KonTiKi
     void GraphicsSystem::ProcessGameObject( GameObject& gameObject, float dt )
     {
     	std::cout << "ProcessGameObject" << std::endl;
-        if( gameObject.meshFilter && gameObject.meshRenderer )
+        // Culls and  arranges renderables in a queue for each camera.
+        // Aranges every camera in a queue too.
+
+        // 
+        /*if( gameObject.meshFilter && gameObject.meshRenderer )
         {
             ArrangeRenderable( gameObject.meshFilter.mesh, gameObject.meshRenderer.materials, gameObject.transform );
         }
         if( gameObject.skinnedMeshRender )    
         {
             
-        } 
+        }*/ 
     }
-
+/*
     void GraphicsSystem::ArrangeRenderable( MeshFilter& meshfilter, MeshRenderer& meshrenderer, Transform& transform )
     {
         // Groups renderalbe data according to material instances.  
         // Meshes appends to different VBO object. 
        
-    }
+    }*/
 }
