@@ -1,2 +1,0 @@
-/usr/bin/ar cr libkontiki.a  CMakeFiles/kontiki.dir/Source/Core/Object.cpp.o CMakeFiles/kontiki.dir/Source/Core/GameObject.cpp.o CMakeFiles/kontiki.dir/Source/Core/GameEngine.cpp.o CMakeFiles/kontiki.dir/Source/Core/Component.cpp.o CMakeFiles/kontiki.dir/Source/Core/System.cpp.o CMakeFiles/kontiki.dir/Source/Core/GraphicsSystem.cpp.o
-/usr/bin/ranlib libkontiki.a

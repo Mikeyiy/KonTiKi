@@ -1,29 +1,0 @@
-TALL_BUILD
-v6
-r1
-cCheck dependencies
-cPhaseScriptExecution CMake\ Rules /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh
-
-N/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh
-c000000005401FEBF00000000000000E6
-t1409416895
-s230
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies5d52793f36b2b941^2a007a3f36b2b941^---0#1#1#--18"Check dependencies36"595253C2-B4C6-443C-AA84-674F6CC4951C-
-
-CPhaseScriptExecution CMake\ Rules /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh
-s431109695.477376
-e431109695.493022
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh
-oecho ""
-o
-oecho Build\ all\ projects
-oBuild all projects
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'110"PhaseScriptExecution CMake\ Rules Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh75767a3f36b2b941^22387e3f36b2b941^-54"echo ""echo Build\ all\ projectsBuild all projects3(21%IDEActivityLogMessage2@8"echo ""-431109695#0#8#-0#-----2@26"echo Build\ all\ projects-431109695#9#26#-0#-----2@19"Build all projects-431109695#35#19#-0#-----0#0#1#--340"PhaseScriptExecution CMake\ Rules Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh    cd /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi    /bin/sh -c /Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/KonTiKi.build/Debug/ALL_BUILD.build/Script-E6238B85A4C54695A877C31A.sh36"421FEB76-9B71-4EAD-9919-B9489EF12593-
-b49FCD90E-10C7-4730-8924-6A659AA07D84
-

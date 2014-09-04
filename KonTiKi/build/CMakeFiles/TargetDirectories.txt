@@ -1,2 +1,0 @@
-/Users/Milc1/Documents/EngineDevelopment/KonTiKi/build/CMakeFiles/kontiki.dir
-/Users/Milc1/Documents/EngineDevelopment/KonTiKi/build/CMakeFiles/testKonTiKi.dir

@@ -1,3 +1,0 @@
-/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/ALL_BUILD.dir
-/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/ZERO_CHECK.dir
-/Users/Milc/Documents/Development/Labs/EngineDevelopment/KonTiKi/Xcode/CMakeFiles/kontiki.dir
