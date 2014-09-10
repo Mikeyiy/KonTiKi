@@ -27,15 +27,13 @@
 
 namespace KonTiKi
 {
-	//template <typename T>
     class GameObject : public Object
     {
-    	
         public:
             GameObject( void );
             virtual ~GameObject( void ) {}
 
-        	template <typename T>
+            template <typename T>
             T* AddComponent( void );
 
          private:

@@ -30,12 +30,9 @@ namespace KonTiKi
     {
     public:
     	GraphicsSystem( void ) {}
-    	virtual ~GraphicsSystem( void ) {}
-
-    protected:
-    	virtual void ProcessGameObject( GameObject& gameObject, float dt ) override;
-    private:
-        void ArrangeRenderable( MeshFilter& meshfilter, MeshRenderer& meshrenderer, Transform& transfrom );
+    	~GraphicsSystem( void ) {}
+    
+        void Update( void );
     };
 }
 

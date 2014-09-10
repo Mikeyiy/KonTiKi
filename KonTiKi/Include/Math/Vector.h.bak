@@ -1,0 +1,586 @@
+#ifndef _PRIMITIVE_DATA_TYPE_H
+#define _PRIMITIVE_DATA_TYPE_H
+#include <string>
+#include <cmath>
+#include <cassert>
+using namespace std;
+namespace KonTiKi
+{
+    struct Vector2
+    {
+    public:
+        Vector2(float x, float y) 
+        {
+            v[0] = x;
+            v[1] = y;
+        }
+
+        //拷贝构造函数。
+        Vector2(const Vector2& rhs)
+        {
+            v[0] = rhs.GetX();
+            v[1] = rhs.GetY();
+        }
+
+        float GetX(void) const
+        {
+            return v[0];
+        }
+
+        float GetY(void) const
+        {
+            return v[1];
+        }
+
+        void SetX(float x)
+        {
+            v[0] = x;
+        }
+
+        void SetY(float y)
+        {
+            v[1] = y;
+        }
+
+        float operator[](int index)
+        {
+            return v[index];
+        }
+
+        //拷贝赋值操作符。
+        Vector2& operator=(const Vector2& rhs)
+        {
+            v[0] = rhs.GetX();
+            v[1] = rhs.GetY();
+            return *this;
+        }
+
+        // 与向量间的运算。
+        Vector2 operator+(const Vector2& rhs) const
+        {
+	    return Vector2(v[0]+rhs.GetX(), v[1]+rhs.GetY());
+        }
+
+        Vector2 operator-(const Vector2& rhs) const
+        {
+            return Vector2(v[0]-rhs.GetX(), v[1]-rhs.GetY());
+        }
+
+        Vector2 operator*(const Vector2& rhs) const
+        {
+            return Vector2(v[0]*rhs.GetX(), v[1]*rhs.GetY());
+        }
+
+        Vector2 operator/(const Vector2& rhs) const
+        {
+            return Vector2(v[0]/rhs.GetX(), v[1]/rhs.GetY());
+        }
+
+        // 与向量间的自反运算。 
+        Vector2& operator+=(const Vector2& rhs)
+        {
+            v[0]+=rhs.GetX();
+            v[1]+=rhs.GetY();
+            return *this;
+        }
+
+        Vector2& operator-=(const Vector2& rhs) 
+        {
+            v[0]-=rhs.GetX();
+            v[1]-=rhs.GetY();
+            return *this;
+        }
+
+        Vector2& operator*=(const Vector2& rhs) 
+        {
+            v[0]*=rhs.GetX();
+            v[1]*=rhs.GetY();
+            return *this;
+        }
+
+        Vector2& operator/=(const Vector2& rhs)
+        {
+            v[0]/=rhs.GetX();
+            v[1]/=rhs.GetY();
+            return *this;
+        }
+
+        // 逻辑运算符。
+        bool operator==(const Vector2& rhs) const
+        {
+            return v[0] == rhs.GetX() && v[1] == rhs.GetY();
+        }
+
+        bool operator!=(const Vector2& rhs) const
+        {
+            return v[0] != rhs.GetX() || v[1] != rhs.GetY();
+        }
+
+        // 与标量的运算。
+        Vector2 operator*(float k) const
+        {
+            return Vector2(k*v[0], k*v[1]);
+        }
+
+        Vector2 operator/(float k) const
+        {
+            assert(k!=0);
+            return Vector2(v[0]/k, v[1]/k);
+        }
+
+        // 与标量的自反运算。
+        Vector2& operator*=(float k)
+        {
+            v[0] *= k;
+            v[1] *= k;
+            return *this;
+        }
+
+        Vector2& operator/=(float k)
+        {
+            v[0] /= k;
+            v[1] /= k;
+            return *this;
+        }
+
+        void Normalize(void)
+        {
+            float magnitude = v[0]*v[0] + v[1]*v[1];
+            assert(magnitude > 0.0f); 
+            v[0] /= magnitude;
+            v[1] /= magnitude;
+        }
+
+        string ToString(void) const
+        {return nullptr;}
+
+        float GetMagnitude(void) const
+        {
+            //return sqrt( m_x*m_x + m_y*m_y );
+            return sqrt(v[0]*v[0] + v[1]*v[1]);
+        }
+
+        float GetSqrMagnitude(void) const
+        {
+           // return m_x*m_x + m_y*m_y;
+           return v[0]*v[0] + v[1]*v[1];
+        }
+
+        // Static Functions
+        // 计算从from到to的角度.
+        static float Angle(const Vector2& from, const Vector2& to) 
+        { return 0; }
+
+        static float Distance(const Vector2& a, const Vector2& b) 
+        { 
+            float dx = a.GetX() - b.GetX();
+            float dy = b.GetY() - b.GetY();
+            return sqrt(dx*dx + dy*dy);
+        }
+
+        static float Dot(const Vector2& a, const Vector2& b )
+        {
+            return a.GetX() * b.GetX() + a.GetY() * b.GetY();
+        }
+        private:
+            float v[2];
+    };
+
+    struct Vector3
+    {
+    public:
+        Vector3(float x, float y, float z)
+        {
+            m_x = x;
+            m_y = y;
+            m_z = z;
+        }
+
+        //拷贝构造函数。
+        Vector3(const Vector3& rhs)
+        {
+            m_x = rhs.GetX();
+            m_y = rhs.GetY();
+            m_z = rhs.GetZ();
+        }
+
+        //拷贝赋值操作符。
+        Vector3& operator=(const Vector3& rhs)
+        {
+            m_x = rhs.GetX();
+            m_y = rhs.GetY();
+            m_z = rhs.GetZ();
+            return *this;
+        }
+
+        // 与向量间的运算。
+        Vector3 operator+(const Vector3& rhs) const
+        {
+	    return Vector3(m_x+rhs.GetX(), m_y+rhs.GetY(), m_z+rhs.GetZ());
+        }
+
+        Vector3 operator-(const Vector3& rhs) const
+        {
+            return Vector3(m_x-rhs.GetX(), m_y-rhs.GetY(), m_z-rhs.GetZ());
+        }
+
+        Vector3 operator*(const Vector3& rhs) const
+        {
+            return Vector3(m_x*rhs.GetX(), m_y*rhs.GetY(), m_z*rhs.GetZ());
+        }
+
+        Vector3 operator/(const Vector3& rhs) const
+        {
+            return Vector3(m_x/rhs.GetX(), m_y/rhs.GetY(), m_z/rhs.GetZ());
+        }
+
+        // 与向量间的自反运算。 
+        Vector3& operator+=(const Vector3& rhs)
+        {
+            m_x+=rhs.GetX();
+            m_y+=rhs.GetY();
+            m_z+=rhs.GetZ();
+            return *this;
+        }
+
+        Vector3& operator-=(const Vector3& rhs) 
+        {
+            m_x-=rhs.GetX();
+            m_y-=rhs.GetY();
+            m_z-=rhs.GetZ();
+            return *this;
+        }
+
+        Vector3& operator*=(const Vector3& rhs) 
+        {
+            m_x*=rhs.GetX();
+            m_y*=rhs.GetY();
+            m_z*=rhs.GetZ();
+            return *this;
+        }
+
+        Vector3& operator/=(const Vector3& rhs)
+        {
+            m_x/=rhs.GetX();
+            m_y/=rhs.GetY();
+            m_z/=rhs.GetZ();
+            return *this;
+        }
+
+        // 逻辑运算符。
+        bool operator==(const Vector3& rhs) const
+        {
+            return m_x == rhs.GetX() && m_y == rhs.GetY() && m_z == rhs.GetZ();
+        }
+
+        bool operator!=(const Vector3& rhs) const
+        {
+            return m_x != rhs.GetX() || m_y != rhs.GetY() || m_z != rhs.GetZ();
+        }
+
+        // 与标量的运算。
+        Vector3 operator*(float k) const
+        {
+            return Vector3(k*m_x, k*m_y, k*m_z);
+        }
+
+        Vector3 operator/(float k) const
+        {
+            assert(k!=0);
+            return Vector3(m_x/k, m_y/k, m_z/k);
+        }
+
+        // 与标量的自反运算。
+        Vector3& operator*=(float k)
+        {
+            m_x *= k;
+            m_y *= k;
+            m_z *= k;
+            return *this;
+        }
+
+        Vector3& operator/=(float k)
+        {
+            m_x /= k;
+            m_y /= k;
+            m_z /= k;
+            return *this;
+        }
+
+        void Normalize(void)
+        {
+            float magnitude = m_x*m_x + m_y*m_y + m_z*m_z;
+            assert(magnitude > 0.0f); 
+            m_x /= magnitude;
+            m_y /= magnitude;
+            m_z /= magnitude;
+        }
+
+        string ToString(void) const
+        {return nullptr;}
+
+        float GetMagnitude(void) const
+        {
+            return sqrt( m_x*m_x + m_y*m_y + m_z*m_z);
+        }
+
+        float GetSqrMagnitude(void) const
+        {
+            return m_x*m_x + m_y*m_y + m_z*m_z;
+        }
+
+
+        float GetX(void) const
+        {
+            return m_x;
+        }
+
+        float GetY(void) const
+        {
+            return m_y;
+        }
+
+        float GetZ(void) const
+        {
+            return m_z;
+        }
+
+        // Static Functions
+        // 计算从from到to的角度.
+        static float Angle(const Vector3& from, const Vector3& to) 
+        { return 0; }
+
+        static float Distance(const Vector3& a, const Vector3& b) 
+        { 
+            float dx = a.GetX() - b.GetX();
+            float dy = b.GetY() - b.GetY();
+            float dz = a.GetZ() - b.GetZ();
+            return sqrt(dx*dx + dy*dy + dz*dz);
+        }
+
+        private:
+            float m_x;
+            float m_y;
+            float m_z;
+    };
+
+    struct Vector4
+    {
+    public:
+        Vector4(float x, float y, float z, float w)
+        {
+            m_x = x;
+            m_y = y;
+            m_z = z;
+            m_w = w;
+        }
+
+        //拷贝构造函数。
+        Vector4(const Vector4& rhs)
+        {
+            m_x = rhs.GetX();
+            m_y = rhs.GetY();
+            m_z = rhs.GetZ();
+            m_w = rhs.GetW();
+        }
+
+        //拷贝赋值操作符。
+        Vector4& operator=(const Vector4& rhs)
+        {
+            m_x = rhs.GetX();
+            m_y = rhs.GetY();
+            m_z = rhs.GetZ();
+            m_w = rhs.GetW();
+            return *this;
+        }
+
+        // 与向量间的运算。
+        Vector4 operator+(const Vector4& rhs) const
+        {
+	    return Vector4(m_x+rhs.GetX(), m_y+rhs.GetY(), m_z+rhs.GetZ(), m_w+rhs.GetW());
+        }
+
+        Vector4 operator-(const Vector4& rhs) const
+        {
+            return Vector4(m_x-rhs.GetX(), m_y-rhs.GetY(), m_z-rhs.GetZ(), m_w-rhs.GetW());
+        }
+
+        Vector4 operator*(const Vector4& rhs) const
+        {
+            return Vector4(m_x*rhs.GetX(), m_y*rhs.GetY(), m_z*rhs.GetZ(), m_w*rhs.GetW());
+        }
+
+        Vector4 operator/(const Vector4& rhs) const
+        {
+            return Vector4(m_x/rhs.GetX(), m_y/rhs.GetY(), m_z/rhs.GetZ(), m_w/rhs.GetW());
+        }
+
+        // 与向量间的自反运算。 
+        Vector4& operator+=(const Vector4& rhs)
+        {
+            m_x+=rhs.GetX();
+            m_y+=rhs.GetY();
+            m_z+=rhs.GetZ();
+            m_w+=rhs.GetW();
+            return *this;
+        }
+
+        Vector4& operator-=(const Vector4& rhs) 
+        {
+            m_x-=rhs.GetX();
+            m_y-=rhs.GetY();
+            m_z-=rhs.GetZ();
+            m_w-=rhs.GetW();
+            return *this;
+        }
+
+        Vector4& operator*=(const Vector4& rhs) 
+        {
+            m_x*=rhs.GetX();
+            m_y*=rhs.GetY();
+            m_z*=rhs.GetZ();
+            m_w*=rhs.GetW();
+            return *this;
+        }
+
+        Vector4& operator/=(const Vector4& rhs)
+        {
+            m_x/=rhs.GetX();
+            m_y/=rhs.GetY();
+            m_z/=rhs.GetZ();
+            m_w/=rhs.GetW();
+            return *this;
+        }
+
+        // 逻辑运算符。
+        bool operator==(const Vector4& rhs) const
+        {
+            return m_x == rhs.GetX() && m_y == rhs.GetY() && m_z == rhs.GetZ() && m_w == rhs.GetW();
+        }
+
+        bool operator!=(const Vector4& rhs) const
+        {
+            return m_x != rhs.GetX() || m_y != rhs.GetY() || rhs.GetZ() || m_w != rhs.GetW();
+        }
+
+        // 与标量的运算。
+        Vector4 operator*(float k) const
+        {
+            return Vector4(k*m_x, k*m_y, k*m_z, k*m_w);
+        }
+
+        Vector4 operator/(float k) const
+        {
+            assert(k!=0);
+            return Vector4(m_x/k, m_y/k, m_z/k, m_w/k);
+        }
+
+        // 与标量的自反运算。
+        Vector4& operator*=(float k)
+        {
+            m_x *= k;
+            m_y *= k;
+            m_z *= k;
+            m_w *= k;
+            return *this;
+        }
+
+        Vector4& operator/=(float k)
+        {
+            m_x /= k;
+            m_y /= k;
+            m_z /= k;
+            m_w /= k;
+            return *this;
+        }
+
+        void Normalize(void)
+        {
+            float magnitude = m_x*m_x + m_y*m_y + m_z*m_z + m_w*m_w;
+            assert(magnitude > 0.0f); 
+            m_x /= magnitude;
+            m_y /= magnitude;
+            m_z /= magnitude;
+            m_w /= magnitude;
+        }
+
+        string ToString(void) const
+        {return nullptr;}
+
+        float GetMagnitude(void) const
+        {
+            return sqrt( m_x*m_x + m_y*m_y + m_z*m_z + m_w*m_w);
+        }
+
+        float GetSqrMagnitude(void) const
+        {
+            return m_x*m_x + m_y*m_y + m_z*m_z + m_w*m_w;
+        }
+
+        float GetX(void) const
+        {
+            return m_x;
+        }
+
+        float GetY(void) const
+        {
+            return m_y;
+        }
+
+        float GetZ(void) const
+        {
+            return m_z;
+        }
+
+        float GetW(void) const
+        {
+            return m_w;
+        }
+
+        // Static Functions
+        // 计算从from到to的角度.
+        static float Angle(const Vector4& from, const Vector4& to) 
+        { return 0; }
+
+        static float Distance(const Vector4& a, const Vector4& b) 
+        { 
+            float dx = a.GetX() - b.GetX();
+            float dy = a.GetY() - b.GetY();
+            float dz = a.GetZ() - b.GetZ();
+            float dw = a.GetW() - b.GetW();
+            return sqrt( dx*dx + dy*dy + dz*dz + dw*dw );
+        }
+
+        private:
+            float m_x;
+            float m_y;
+            float m_z;
+            float m_w;
+    };
+
+    // Global Functions.
+
+    inline Vector3 Cross(const Vector3& a, const Vector3& b)
+    {
+        return Vector3(a.GetY()*b.GetZ() - a.GetZ()*b.GetY()
+                      ,a.GetZ()*b.GetX() - a.GetX()*b.GetZ()
+                      ,a.GetX()*b.GetY() - a.GetY()*b.GetX());
+    }
+
+    inline Vector2 operator*(float k, const Vector2& v)
+    {
+        return Vector2(k*v.GetX(), k*v.GetY());
+    }
+
+    inline Vector3 operator*(float k, const Vector3& v)
+    {
+        return Vector3(k*v.GetX(), k*v.GetY(), k*v.GetZ());
+    }
+
+    inline Vector4 operator*(float k, const Vector4& v)
+    {
+        return Vector4(k*v.GetX(), k*v.GetY(), k*v.GetX(), k*v.GetY());
+    }
+}
+#endif
+

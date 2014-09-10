@@ -20,7 +20,11 @@
 #include <iostream>
 #include <cassert>
 #include <GraphicsSystem.h>
-
+#include <GameObject.h>
+#include <Transform.h>
+#include <Camera.h>
+#include <Math/Vector.h>
+#include <Log/Log.h>
 namespace KonTiKi
 {
     void GraphicsSystem::Update(void)
@@ -34,8 +38,11 @@ namespace KonTiKi
             std::list<GameObject*>::iterator iterator = s_gameObjects.begin();
             for( ; iterator != s_gameObjects.end(); ++iterator )
             {
+                // 判断所有的Renderable GameObject是否在视景体中。
                 GameObject* pGameObject = *iterator;
                 assert( pGameObject );
+                
+                
             }
         }
     }

@@ -43,20 +43,24 @@
 
 namespace KonTiKi
 {
-    class System;
+    class RenderingSystem;
+    class InputSystem;
+    class GraphicsSystem;
 
     class GameEngine : public Object
     {
     public:
-        GameEngine( void ); 
-        ~GameEngine( void );
-    private:
-    	void Update( void );
-    	void Init( void );
+        GameEngine(void); 
+        ~GameEngine(void);
+
+    public:
+    	void Update(void);
+    	void Init(void);
+        void Destroy(void);
 
     private:
-        Renderer m_renderer;
-        Input m_input;
+        RenderingSystem* m_pRenderingSystem;
+        InputSystem* m_pInputSystem;
         GraphicsSystem* m_pGraphicsSystem;
     };
 }

@@ -27,7 +27,7 @@ namespace KonTiKi
 	class Transform : public Component
 	{
 	public:
-		Transform( GameObject* pAttatchedGameObject ) : Component(pAttatchedGameObject) {}
+		Transform( GameObject* pAttatchedGameObject ) : Component( pAttatchedGameObject ) {}
 	};
 }
 

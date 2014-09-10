@@ -1,13 +1,13 @@
 #ifndef _MESH_FILTER_
 #define _MESH_FILTER_
-
+#include <Component.h>
 namespace KonTiKi
 {
-    class MeshFilter
+    class MeshFilter : Component
     {
     public:
-        MeshFilter( void );
-        virtual ~MeshFilter( void );
+        MeshFilter( void ){};
+        ~MeshFilter( void ){};
     };
 }
 

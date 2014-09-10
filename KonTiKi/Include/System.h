@@ -22,11 +22,13 @@
 #define _SYSTEM_H_
 
 #include <list>
+#include <vector>
 #include "Object.h"
 
 namespace KonTiKi
 {
     class GameObject;
+    class Camera;
     class System : public Object
     {
     public:
@@ -41,10 +43,8 @@ namespace KonTiKi
         }
 
     protected:
-    	virtual void ProcessGameObject( GameObject& gameObject, float dt ) = 0;
-
-    protected:
     	static std::list<GameObject*> s_gameObjects;
+        static std::vector<Camera*> s_cameras;
     };
 
 }

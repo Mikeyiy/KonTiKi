@@ -22,7 +22,9 @@
 #include <GameEngine.h>
 #include <System.h>
 #include <cassert>
-#include "GraphicsSystem.h"
+#include <GraphicsSystem.h>
+#include <RenderingSystem.h>
+#include <InputSystem.h>
 
 namespace KonTiKi
 {
@@ -33,11 +35,11 @@ namespace KonTiKi
 
     void GameEngine::Init( void )
     {
-        m_pRenderer = new Renderer();
-        m_pRenderer->Start();
+        m_pRenderingSystem = new RenderingSystem();
+        m_pRenderingSystem->Start();
 
-        m_pInput = new Input();
-        m_pInput->Start(); 
+        m_pInputSystem = new InputSystem();
+        m_pInputSystem->Start(); 
 
         // 初始化各个系统模块。
         m_pGraphicsSystem = new GraphicsSystem();
@@ -52,13 +54,8 @@ namespace KonTiKi
     {
         delete m_pGraphicsSystem;
 
-        m_pInput->Stop();
-        m_pRenderer->Stop();
+        m_pInputSystem->Stop();
+        m_pRenderingSystem->Stop();
     }
-
-    void GameEngine::MainLoop( void )
-    {
-    }
-
 
 }

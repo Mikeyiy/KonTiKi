@@ -19,19 +19,14 @@
 */
 
 #include <iostream>
-#include "System.h"
-
+#include <System.h>
+#include <Camera.h>
 namespace KonTiKi
 {
     std::list<GameObject*> System::s_gameObjects;
+    std::vector<Camera*> System::s_cameras;
 
-	void System::Update( float dt )
+    void System::Update( float dt )
     {
-    	std::cout << "System Update" << std::endl;
-    	std::list<GameObject*>::iterator iterator = s_gameObjects.begin();
-        for(; iterator != s_gameObjects.end(); ++iterator)
-        {
-            ProcessGameObject( **iterator, dt );
-        }
     }
 }

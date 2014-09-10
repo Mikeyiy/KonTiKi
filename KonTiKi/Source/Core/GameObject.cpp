@@ -35,7 +35,7 @@ namespace KonTiKi
         System::AddGameObject( this );
     }
 
-	template <typename T>
+    template <typename T>
     T* GameObject::AddComponent( void )
     {
     	//static_assert( std::is_same<int, int>::value );
