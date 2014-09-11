@@ -42,3 +42,4 @@ install_manifest.txt
 build
 Xcode
 MSYS
+.DS_Store
