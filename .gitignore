@@ -43,3 +43,4 @@ build
 Xcode
 MSYS
 .DS_Store
+*.swp
