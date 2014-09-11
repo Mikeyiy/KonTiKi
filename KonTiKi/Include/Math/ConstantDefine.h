@@ -5,6 +5,6 @@ namespace KonTiKi
     const float PI = 3.1415926535898f;
     const float DEGREE_TO_RADIAN = 0.0174532925199f;
     const float RADIAN_TO_DEGREE = 57.2957795130823f;
-    
+    const float EPSILON = 1.401298E-45;    
 }
 #endif

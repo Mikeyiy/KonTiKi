@@ -17,14 +17,14 @@ namespace KonTiKi
         return retMat;
     }
 
-    const bool Matrix4x4::isIdentity(void) const
+    const bool Matrix4x4::IsIdentity(void) const
     {
-        return false;
+        if((m[0][0]-1 < EPSILON) &&(m[1][1]-1 < EPSILON) &&(m[2][2]-1 < EPSILON) &&(m[3][3]-1 < EPSILON));
     }
 
     const Matrix4x4 Matrix4x4::GetTranspose(void) const
     {
-
+        float temp;
         Matrix4x4 retMat;
         return retMat;
     }
