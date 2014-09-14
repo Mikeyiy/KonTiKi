@@ -35,20 +35,6 @@ int main(
     float sinp = sin(p);
     float sinb = sin(b);
 
-    mat.SetElement(0, 0, cosh*cosb + sinh*sinp*sinb);
-    mat.SetElement(1, 0, sinb*cosp);
-    mat.SetElement(2, 0, -sinh*cosb + cosh*sinp*sinb);
-    
-    mat.SetElement(0, 1, -cosh*sinb+sinh*sinp*cosb);
-    mat.SetElement(1, 1, cosb*cosp);
-    mat.SetElement(2, 1, sinb*sinh+cosh*sinp*cosb);
-
-    mat.SetElement(0, 2, sinh*cosp);
-    mat.SetElement(1, 2, -sinp);
-    mat.SetElement(2, 2, cosh*cosp);
-
-    mat.SetElement(3, 3, 1);
-    mat.Print();
 
     Vector3 v(0, 1, 0);
     Vector3 v1 = mat.MultiplyVector(v);
@@ -96,4 +82,23 @@ int main(
     mat3.Print();
 
     Angle(q1, q2);
+
+    Matrix4x4 mat4 = Inverse(mat3);
+    mat4.Print();
+
+    Matrix4x4 mat5 = mat3 * mat4;
+    mat5.Print();
+
+    if( mat5.IsIdentity() )
+    {
+        printf("Yes \n");
+    }
+    else
+    {
+        printf("No \n");
+    }
+
+    printf("View Matrix: \n");
+    mat5 = GetWorldToCameraMatrix(Vector3(10, 1, 1), Vector3(5, 10, 12), Vector3(1, 10, 1));
+    mat5.Print();
 }

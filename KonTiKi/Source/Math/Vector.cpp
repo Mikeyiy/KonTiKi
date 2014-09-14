@@ -5,28 +5,28 @@ namespace KonTiKi
         const Vector3 Vector3::up = Vector3(0, 1, 0);
         Vector2::Vector2(const Vector3& rhs)
         {
-            v[0] = rhs.GetX();
-            v[1] = rhs.GetY();
+            m[0] = rhs.GetX();
+            m[1] = rhs.GetY();
         }
 
         Vector2::Vector2(const Vector4& rhs)
         {
-            v[0] = rhs.GetX();
-            v[1] = rhs.GetY();
+            m[0] = rhs.GetX();
+            m[1] = rhs.GetY();
         }
 
         Vector3::Vector3(const Vector4& rhs)
         {
-            v[0] = rhs.GetX();
-            v[1] = rhs.GetY();
-            v[2] = rhs.GetZ();
+            m[0] = rhs.GetX();
+            m[1] = rhs.GetY();
+            m[2] = rhs.GetZ();
         }
 
         Vector3::Vector3(const Vector2& rhs)
         {
-            v[0] = rhs.GetX();
-            v[1] = rhs.GetY();
-            v[2] = 0;
+            m[0] = rhs.GetX();
+            m[1] = rhs.GetY();
+            m[2] = 0;
         }
 
 
