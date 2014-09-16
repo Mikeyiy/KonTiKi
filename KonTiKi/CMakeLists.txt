@@ -9,6 +9,7 @@ add_library(kontiki Source/Core/Object.cpp
                     Source/Core/GameEngine.cpp
                     Source/Core/Component.cpp
                     Source/Core/System.cpp
+                    Source/Core/Transform.cpp
                     Source/Core/GraphicsSystem.cpp
                     Source/Math/Vector.cpp
                     Source/Math/Matrix.cpp

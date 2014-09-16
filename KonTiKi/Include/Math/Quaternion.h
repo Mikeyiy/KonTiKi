@@ -20,6 +20,8 @@ namespace KonTiKi
 
         void SetFromToRotation(const Vector3& fromDirection, const Vector3& toDirection);
 
+        void SetFromToRotation(const Quaternion& from, const Quaternion& to);
+
         void SetLookRotation(const Vector3& view, const Vector3& up = Vector3::up);
 
         void Print(void) const;
@@ -28,22 +30,7 @@ namespace KonTiKi
 
         const Quaternion operator/(float k) const;
 
-        const float GetX() const;
-
-        const float GetY() const;
-
-        const float GetZ() const;
-        
-        const float GetW() const;
-
-        void SetX(float new_x);
-
-        void SetY(float new_y);
-
-        void SetZ(float new_z);
-
-        void SetW(float new_w);
-    private:
+    public:
         float x, y, z, w;
     };
 
@@ -56,6 +43,7 @@ namespace KonTiKi
     extern const Matrix4x4 QuaternionToMatrix(const Quaternion& rotation);
 
     extern const Quaternion EulerToQuaternion(float p, float h, float b);    
+    extern const Quaternion EulerToQuaternion(const Vector3& eulerAngles);    
   
     extern const Vector3 QuaternionToEuler(const Quaternion& rotation);
 
@@ -78,5 +66,8 @@ namespace KonTiKi
     extern const bool operator!=(const Quaternion& a, const Quaternion& b);
 
     extern const Quaternion operator*(const Quaternion& lhs, const Quaternion& rhs);
+
+    extern const Quaternion operator-(const Quaternion& lhs, const Quaternion& rhs);
+
 }
 #endif

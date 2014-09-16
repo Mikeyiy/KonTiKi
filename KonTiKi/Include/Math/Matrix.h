@@ -15,13 +15,21 @@ namespace KonTiKi
     public:
         Matrix4x4();
 
+        Matrix4x4(const Matrix4x4& mat);
+
+        Matrix4x4& operator=(const Matrix4x4& rhs);
+
+        Vector4& operator[](int index);
+
+        Matrix4x4 operator*(float s) const;
+
         //Fetches a row in matrix(Read only). 
         const Vector4& operator[](int index) const; 
 
         //Get inverse matrix.
         const Matrix4x4 GetInverse(void) const;
 
-        const bool isIdentity(void) const;
+        const bool IsIdentity(void) const;
 
         const Matrix4x4 GetTranspose(void) const;
 
@@ -39,8 +47,6 @@ namespace KonTiKi
 
         void SetRow(int i, const Vector4& row);
 
-        void SetElement(int i, int j, float e);
-
         void SetTRS(const Vector3& pos, const Quaternion& q, const Vector3& s);
 
         string ToString(void) const;
@@ -53,12 +59,24 @@ namespace KonTiKi
             Vector4 ret;
             for(int i = 0; i != 4; ++i)
             {
-                ret.Set(i, Dot(GetRow(i), pointIn4d));
+                //ret.Set(i, Dot(GetRow(i), pointIn4d));
+                ret[i] = Dot(m[i], pointIn4d);
             }
             return ret;
         }
-    private:
-        Vector4 m[4];
+    public:
+        union
+        {
+            struct 
+            {
+                float m00, m01, m02, m03,
+                      m10, m11, m12, m13,
+                      m20, m21, m22, m23, 
+                      m30, m31, m32, m33;
+            };
+            Vector4 m[4];
+        };
+        //Vector4 m[4];
     };
 
     // Global Functions
@@ -72,6 +90,12 @@ namespace KonTiKi
 
     extern const Matrix4x4 TRS(const Vector3& pos, const Quaternion& q, const Vector3& s);
 
+    extern const Matrix4x4 GetWorldToCameraMatrix(const Vector3& eyePos, const Vector3& lookAtPos, const Vector3& up);
+
     extern const Matrix4x4 EulerToMatrix(float p, float h, float b);
+
+    extern const float Determinant(const Matrix4x4& m);
+
+    extern const Matrix4x4 Inverse(const Matrix4x4& m);
 }
 #endif
