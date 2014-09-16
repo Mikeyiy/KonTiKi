@@ -1,5 +1,6 @@
 #include <Math/Matrix.h>
 #include <Math/Quaternion.h>
+#include <Utils.h>
 namespace KonTiKi
 {
     Matrix4x4::Matrix4x4()
@@ -67,9 +68,7 @@ namespace KonTiKi
     //Get inverse matrix.
     const Matrix4x4 Matrix4x4::GetInverse(void) const
     {
-        Matrix4x4 retMat;
-        
-        return retMat;
+        return Inverse(*this);
     }
 
     const bool Matrix4x4::IsIdentity(void) const
@@ -79,9 +78,14 @@ namespace KonTiKi
 
     const Matrix4x4 Matrix4x4::GetTranspose(void) const
     {
-        float temp;
-        Matrix4x4 retMat;
-        return retMat;
+        Matrix4x4 mat = *this;
+        Swap(&(mat.m01), &(mat.m10));        
+        Swap(&mat.m02, &mat.m20);        
+        Swap(&mat.m03, &mat.m30);        
+        Swap(&mat.m12, &mat.m21);        
+        Swap(&mat.m13, &mat.m31);        
+        Swap(&mat.m23, &mat.m32);        
+        return mat;
     }
 
     const Vector4 Matrix4x4::GetColumn(int i) const
@@ -134,7 +138,9 @@ namespace KonTiKi
     }
 
     void Matrix4x4::SetTRS(const Vector3& pos, const Quaternion& q, const Vector3& s)
-    {}
+    {
+        *this = TRS(pos, q, s);
+    }
 
     string Matrix4x4::ToString(void) const
     {
@@ -224,9 +230,20 @@ namespace KonTiKi
         return retMat;
     }
 
-    const Matrix4x4 Perspective(float fox, float aspect, float zNear, float zFar)
+    const Matrix4x4 Perspective(float fov, float aspect, float zNear, float zFar)
     {
+        // Begin For OpenGL -------->
+        float h = tan(0.5f * fov * DEGREE_TO_RADIAN) * zNear;
+        float w = h * aspect;
+
         Matrix4x4 retMat;
+        // w is half of width. 
+        // h is half of height.
+        retMat.m00 = zNear/w ;  retMat.m01 = 0;  retMat.m02 = 0;  retMat.m03 = 0;
+        retMat.m10 = 0;  retMat.m11 = zNear/h;  retMat.m12 = 0; retMat.m23 = 0;
+        retMat.m20 = 0;  retMat.m21 = 0;  retMat.m22 = (zNear+zFar)/(zNear-zFar);  retMat.m23 = 2.0f*zNear*zFar/(zNear-zFar);
+        retMat.m30 = 0;  retMat.m31 = 0;  retMat.m32 = -1;  retMat.m33 = 0;
+        // End For OpenGL
         return retMat;
     }
 
@@ -248,7 +265,10 @@ namespace KonTiKi
         
         retMat[0] = U; retMat[0][3] = -UdotT;
         retMat[1] = V; retMat[1][3] = -VdotT;
-        retMat[2] = N; retMat[2][3] = -NdotT;
+        // For Left Hand Coordination System.
+        //retMat[2] = N; retMat[2][3] = -NdotT;
+        // For Right Hand Coordination System.
+        retMat[2] = -N; retMat[2][3] = NdotT;
         retMat[3][3] = 1;
         return retMat;
     }

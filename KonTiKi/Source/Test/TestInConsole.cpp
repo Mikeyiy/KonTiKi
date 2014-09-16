@@ -5,6 +5,7 @@
 #include <Math/Matrix.h>
 #include <Math/ConstantDefine.h>
 #include <Math/Quaternion.h>
+#include <Transform.h>
 using namespace KonTiKi;
 
 int main(
@@ -83,9 +84,12 @@ int main(
 
     Angle(q1, q2);
 
+    printf("-------mat3 inverse:\n");
     Matrix4x4 mat4 = Inverse(mat3);
     mat4.Print();
 
+    printf("-------mat3 inverse:\n");
+    mat3.GetInverse().Print();
     Matrix4x4 mat5 = mat3 * mat4;
     mat5.Print();
 
@@ -101,4 +105,26 @@ int main(
     printf("View Matrix: \n");
     mat5 = GetWorldToCameraMatrix(Vector3(10, 1, 1), Vector3(5, 10, 12), Vector3(1, 10, 1));
     mat5.Print();
+
+    mat5 = Perspective(60, 2, 2, 100);
+    mat5.Print();
+
+    Quaternion q3 = EulerToQuaternion(12.42, 25.74, 34.35);
+    mat5 = TRS(Vector3(5.9604, 0, -8.94069), q3, s);
+    mat5.Print();
+
+    mat5 = mat5.GetTranspose();
+    mat5.Print();
+
+    printf("---------Transform-------------\n");
+    Transform t(nullptr);
+    t.SetLocalPosition(Vector3(5.96, 1, -8.9));
+    t.SetLocalEulerAngles(Vector3(12.42, 25.74, 34.35));
+    t.SetLocalScale(Vector3(1, 1, 1));
+    mat5 = t.GetLocalToWorldMatrix(); 
+    mat5.Print();
+
+    mat4 = t.GetWorldToLocalMatrix();
+    mat4.Print();
+    (mat4*mat5).Print();
 }

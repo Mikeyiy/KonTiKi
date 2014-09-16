@@ -405,7 +405,14 @@ namespace KonTiKi
         }
 
         public:
+            static const Vector3 back;
+            static const Vector3 down;
+            static const Vector3 forward;
+            static const Vector3 left;
+            static const Vector3 one;
+            static const Vector3 right;
             static const Vector3 up;
+            static const Vector3 zero;
         public:
             union 
             {
@@ -695,6 +702,15 @@ namespace KonTiKi
     inline const float Dot(const Vector4& lhs, const Vector4& rhs)
     {
         return lhs.x*rhs.x + lhs.y*rhs.y + lhs.z*rhs.z + lhs.w*rhs.w;
+    }
+
+    inline const Vector3 operator-(const Vector3& rhs)
+    {
+        Vector3 ret;
+        ret.x = -rhs.x;
+        ret.y = -rhs.y;
+        ret.z = -rhs.z;
+        return ret;
     }
 }
 #endif

@@ -43,6 +43,7 @@ namespace KonTiKi
     extern const Matrix4x4 QuaternionToMatrix(const Quaternion& rotation);
 
     extern const Quaternion EulerToQuaternion(float p, float h, float b);    
+    extern const Quaternion EulerToQuaternion(const Vector3& eulerAngles);    
   
     extern const Vector3 QuaternionToEuler(const Quaternion& rotation);
 

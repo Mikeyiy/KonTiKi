@@ -142,6 +142,11 @@ namespace KonTiKi
 	return Quaternion(x, y, z, w);
     }
 	  
+    const Quaternion EulerToQuaternion(const Vector3& eulerAngles)    
+    {
+        return EulerToQuaternion(eulerAngles.x, eulerAngles.y, eulerAngles.z);
+    }
+
     const Vector3 QuaternionToEuler(const Quaternion& rotation)
     {
 	float x = rotation.x;
