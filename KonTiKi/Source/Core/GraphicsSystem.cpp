@@ -30,20 +30,22 @@ namespace KonTiKi
     void GraphicsSystem::Update(void)
     {
         std::vector<Camera*>::iterator cam_iterator = s_cameras.begin();
+        // 需要对Camera排序，根据depth.
         for( ; cam_iterator != s_cameras.end(); ++cam_iterator )
         { 
             Camera* pCamera = *cam_iterator;
             assert( pCamera );
-
-            std::list<GameObject*>::iterator iterator = s_gameObjects.begin();
-            for( ; iterator != s_gameObjects.end(); ++iterator )
-            {
-                // 判断所有的Renderable GameObject是否在视景体中。
-                GameObject* pGameObject = *iterator;
-                assert( pGameObject );
-                
-                
-            }
+            pCamera->CollectAndSort(s_gameObjects);
         }
+        // 假设现在填充第N帧完成，欲填充第N+1帧的数据，检查第N-1帧是否渲染结束，否则等待。
+        // 若已渲染完成，则翻转缓冲区，并开始填充N+1帧。 
+        // 设想如果用轮询机制，则可以在渲染命令缓冲设置一个能否读写的标识。
+        // 如果使用线程间信号同步则可能性能要好一些。 
+        for( ; cam_iterator != s_cameras.end(); ++cam_iterator )
+        {
+            Camera* pCamera = *cam_iterator;
+            pCamera->FillRenderingBuffer();
+        }
+        // 第N+1帧渲染命令已填充完毕。
     }
 }
