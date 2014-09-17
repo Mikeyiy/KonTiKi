@@ -34,18 +34,19 @@ namespace KonTiKi
     const Matrix4x4 Transform::GetWorldToLocalMatrix(void)
     {
         Matrix4x4 retMat = TRS(m_localPosition, m_localRotation, m_localScale);
-        /*if(IsUnifiedScale())
+        if(IsUnifiedScale())
         {
             retMat = retMat.GetTranspose();
-            retMat[0][3] = -retMat[3][0];
+            Vector3 v(-retMat[3][0], -retMat[3][1], -retMat[3][2]);
             retMat[3][0] = 0;
-            retMat[1][3] = -retMat[3][1];
             retMat[3][1] = 0;
-            retMat[2][3] = -retMat[3][2];
             retMat[3][2] = 0;
+            retMat[0][3] = Dot(v, Vector3(retMat[0]));
+            retMat[1][3] = Dot(v, Vector3(retMat[1]));
+            retMat[2][3] = Dot(v, Vector3(retMat[2]));
             return retMat;
         }
-        else*/
+        else
         {
             return retMat.GetInverse();
         }
