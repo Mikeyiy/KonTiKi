@@ -5,6 +5,18 @@
 #include <Component.h>
 namespace KonTiKi
 {
+    struct RenderableItem
+    {
+        Mesh* m_pMesh;
+        int m_meshIndex;
+        Material* m_pMaterial;
+
+        RenderableItem(const Mesh* pMesh, int meshIndex, Material* pMaterial) 
+            : m_pMesh(pMesh), m_meshIndex(meshIndex), m_pMaterial(pMaterial)
+        {
+        }
+    };
+
     class Camera : Component
     {
     friend class GraphicsSystem;
@@ -17,13 +29,14 @@ namespace KonTiKi
    
         void FillRenderingBuffer(void);
 
+        void AddItemToRenderQueue(const Renderer& renderer);
+
     private: 
         // 
-        std::list<GameObject*> BackgroundQueue;
-        std::list<GameObject*> GeometryQueue;
-        std::list<GameObject*> AlphaTestQueue;
+        std::list<GameObject*> OpaqueQueue;
         std::list<GameObject*> TransparentQueue;
-        std::list<GameObject*> OverlayQueue;
+
+        Matrix4x4 m_projectionMatrix;
         
     };
 }

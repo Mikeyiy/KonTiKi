@@ -14,6 +14,20 @@ namespace KonTiKi
         TRANSPARENT = 3000,
         OVERLAY = 4000,
     };
+
+    enum RenderType
+    {
+        OPAQUE,
+        TRANSPARENT,
+        TRANSPARENT_CUTOUT,
+        BACKGROUND,
+        OVERLAY,
+        TREE_OPAQUE,
+        TREE_TRANSPARENT_CUTOUT,
+        TREE_BILLBOARD,
+        GRASS,
+        GRASS_BILLBOARD,
+    };
     public:
         Material(const std::string contents);
 

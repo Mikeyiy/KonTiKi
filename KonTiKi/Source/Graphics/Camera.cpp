@@ -1,4 +1,5 @@
 #include <list>
+#include <cassert>
 #include <Camera.h>
 #include <GameObject.h>
 #include <Renderer/Material.h>
@@ -9,14 +10,42 @@ namespace KonTiKi
         std::list<GameObject*>::iterator it = gameObjects.begin();
         for(; it != gameObjects.end(); ++it)
         {
-            // 判断Renderable GameObject是否在视景体中。
             GameObject* pGameObject = *it;
             assert(pGameObject);
+
+            Renderer* pRenderer = pGameObject->GetRenderer();
+            if( !pRenderer )
+                continue;
+            
+            // 判断Renderable GameObject是否在视景体中。
+            if( !IsInFrustum(m_projectionMatrix, pGameObject->GetPosition()) )
+                continue;
+
+            // 根据Mesh对应的材质类型分类存放GameObject对象。对于半透明对象则需要排序。
+            assert(pRenderer->m_pMesh);
+            int meshCount = pRenderer->m_pMesh->GetSubMeshCount();
+            int materialCount = pRenderer->GetMaterialsCount(); 
+            for(int i=0; i != meshCount; ++i)
+            {
+                // TODO: Spawn RenderableItem form pool.
+                if( i < materialCount )
+                    RenderableItem* pItem = new RenderableItem(pRenderer->m_pMesh, i, pRenderer->GetMaterials()[i]);
+                else
+                {
+                    RenderableItem* pItem = new RenderableItem(pRenderer->m_pMesh, i, Material::GetErrorMaterial());
+                }
+            }
+            AddItemToRenderQueue(pItem);            
         }
     }
  
     void Camera::FillRenderingBuffer(void)
     {
     
+    }
+
+    void AddItemToRenderQueue(const RenderableItem* pItem)
+    {
+        
     }
 }

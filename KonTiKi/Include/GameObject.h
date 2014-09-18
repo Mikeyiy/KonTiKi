@@ -24,6 +24,7 @@
 #include <vector>
 #include "Object.h"
 #include "Component.h"
+#include <Math/Vector.h>
 
 namespace KonTiKi
 {
@@ -36,11 +37,18 @@ namespace KonTiKi
             template <typename T>
             T* AddComponent( void );
 
+
+            // Getters of Varialbles 
+            const Vector3 GetPosition(void) const
+            {
+                return m_position;
+            }
          private:
          	void Init( void );
 
         private:
         	std::vector<Component*> m_components;
+            Vector3 m_position;
 
     };
 }
