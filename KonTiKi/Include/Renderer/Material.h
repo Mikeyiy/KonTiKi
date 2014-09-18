@@ -6,6 +6,15 @@ namespace KonTiKi
     class Material : Object
     {
     public:
+    enum RenderQueue
+    {
+        BACKGROUD = 1000,
+        GEOMETRY = 2000,
+        ALPHATEST = 2450,
+        TRANSPARENT = 3000,
+        OVERLAY = 4000,
+    };
+    public:
         Material(const std::string contents);
 
         Material(const Shader& shader);

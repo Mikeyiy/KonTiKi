@@ -1,6 +1,7 @@
 #include <list>
 #include <Camera.h>
 #include <GameObject.h>
+#include <Renderer/Material.h>
 namespace KonTiKi
 {
     void Camera::CollectAndSort(std::list<GameObject*>& gameObjects)
