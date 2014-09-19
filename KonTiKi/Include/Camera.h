@@ -3,15 +3,19 @@
 #include <list>
 #include <cassert>
 #include <Component.h>
+#include <Math/Matrix.h>
 namespace KonTiKi
 {
+    class Renderer;
+    class Material;
+    class Mesh;
     struct RenderableItem
     {
         Mesh* m_pMesh;
         int m_meshIndex;
         Material* m_pMaterial;
 
-        RenderableItem(const Mesh* pMesh, int meshIndex, Material* pMaterial) 
+        RenderableItem(Mesh* pMesh, int meshIndex, Material* pMaterial) 
             : m_pMesh(pMesh), m_meshIndex(meshIndex), m_pMaterial(pMaterial)
         {
         }
@@ -27,7 +31,7 @@ namespace KonTiKi
     private:
         void CollectAndSort(std::list<GameObject*>& gameObjects); 
    
-        void FillRenderingBuffer(void);
+        void Render(void);
 
         void AddItemToRenderQueue(const Renderer& renderer);
 

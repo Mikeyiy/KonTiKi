@@ -44,7 +44,7 @@ namespace KonTiKi
         for( ; cam_iterator != s_cameras.end(); ++cam_iterator )
         {
             Camera* pCamera = *cam_iterator;
-            pCamera->FillRenderingBuffer();
+            pCamera->Render();
         }
         // 第N+1帧渲染命令已填充完毕。
     }

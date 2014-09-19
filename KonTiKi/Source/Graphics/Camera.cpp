@@ -39,7 +39,7 @@ namespace KonTiKi
         }
     }
  
-    void Camera::FillRenderingBuffer(void)
+    void Camera::Render(void)
     {
     
     }

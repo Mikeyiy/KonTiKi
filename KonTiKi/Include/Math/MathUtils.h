@@ -9,7 +9,7 @@ namespace KonTiKi
         return abs(a-b) < EPSILON;
     }
 
-    inline bool IsInFrustum(const Matrix& projectionMatrix, const Vector3& position)
+    inline bool IsInFrustum(const Matrix4x4& projectionMatrix, const Vector3& position)
     {
         return true;
     }
