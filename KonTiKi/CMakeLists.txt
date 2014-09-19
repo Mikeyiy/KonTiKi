@@ -15,6 +15,7 @@ add_library(kontiki Source/Core/Object.cpp
                     Source/Math/Matrix.cpp
                     Source/Math/Quaternion.cpp
                     Source/Graphics/Camera.cpp
+                    Source/Renderer/Material.cpp
            )
 
 add_executable(testKonTiKi Source/Test/TestInConsole.cpp

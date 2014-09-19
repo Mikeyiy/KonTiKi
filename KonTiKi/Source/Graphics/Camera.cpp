@@ -3,6 +3,10 @@
 #include <Camera.h>
 #include <GameObject.h>
 #include <Renderer/Material.h>
+#include <Transform.h>
+#include <Math/MathUtils.h>
+#include <Renderer/Renderer.h>
+#include <Mesh.h>
 namespace KonTiKi
 {
     void Camera::CollectAndSort(std::list<GameObject*>& gameObjects)
@@ -18,7 +22,7 @@ namespace KonTiKi
                 continue;
             
             // 判断Renderable GameObject是否在视景体中。
-            if( !IsInFrustum(m_projectionMatrix, pGameObject->GetPosition()) )
+            if( !IsInFrustum(m_projectionMatrix, pGameObject->GetTransform()->GetPosition()) )
                 continue;
 
             // 根据Mesh对应的材质类型分类存放GameObject对象。对于半透明对象则需要排序。
@@ -28,14 +32,15 @@ namespace KonTiKi
             for(int i=0; i != meshCount; ++i)
             {
                 // TODO: Spawn RenderableItem form pool.
+                RenderableItem* pItem = nullptr;
                 if( i < materialCount )
-                    RenderableItem* pItem = new RenderableItem(pRenderer->m_pMesh, i, pRenderer->GetMaterials()[i]);
+                    pItem = new RenderableItem(pRenderer->m_pMesh, i, pRenderer->GetMaterials()[i]);
                 else
                 {
-                    RenderableItem* pItem = new RenderableItem(pRenderer->m_pMesh, i, Material::GetErrorMaterial());
+                    pItem = new RenderableItem(pRenderer->m_pMesh, i, GetErrorMaterial());
                 }
+                AddItemToRenderQueue(pItem);            
             }
-            AddItemToRenderQueue(pItem);            
         }
     }
  
@@ -44,7 +49,7 @@ namespace KonTiKi
     
     }
 
-    void AddItemToRenderQueue(const RenderableItem* pItem)
+    void Camera::AddItemToRenderQueue(const RenderableItem* pItem)
     {
         
     }

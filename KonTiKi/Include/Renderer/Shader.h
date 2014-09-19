@@ -7,9 +7,9 @@ namespace KonTiKi
 	{
     public:
         // Render queue of this shader. 
-        int GetRenderQueue(void)		
+        int GetRenderQueue(void);		
 	};
 
-    Shader* Find(const std::string shaderName) const;
+    Shader* Find(const std::string shaderName) ;
 }
 #endif

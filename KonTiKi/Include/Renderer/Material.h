@@ -1,5 +1,7 @@
 #ifndef _MATERIAL_H_
 #define _MATERIAL_H_
+#include <Object.h>
+#include <string>
 namespace KonTiKi
 {
     class Shader;
@@ -8,38 +10,54 @@ namespace KonTiKi
     public:
     enum RenderQueue
     {
-        BACKGROUD = 1000,
-        GEOMETRY = 2000,
-        ALPHATEST = 2450,
-        TRANSPARENT = 3000,
-        OVERLAY = 4000,
+        QUEUE_BACKGROUD = 1000,
+        QUEUE_GEOMETRY = 2000,
+        QUEUE_ALPHATEST = 2450,
+        QUEUE_TRANSPARENT = 3000,
+        QUEUE_OVERLAY = 4000,
     };
 
     enum RenderType
     {
-        OPAQUE,
-        TRANSPARENT,
-        TRANSPARENT_CUTOUT,
-        BACKGROUND,
-        OVERLAY,
-        TREE_OPAQUE,
-        TREE_TRANSPARENT_CUTOUT,
-        TREE_BILLBOARD,
-        GRASS,
-        GRASS_BILLBOARD,
+        TYPE_OPAQUE,
+        TTYPE_RANSPARENT,
+        TTYPE_RANSPARENT_CUTOUT,
+        TYPE_BACKGROUND,
+        TYPE_OVERLAY,
+        TYPE_TREE_OPAQUE,
+        TYPE_TREE_TRANSPARENT_CUTOUT,
+        TYPE_TREE_BILLBOARD,
+        TYPE_GRASS,
+        TYPE_GRASS_BILLBOARD,
     };
     public:
-        Material(const std::string contents);
+        Material(const std::string& contents);
 
         Material(const Shader& shader);
 
-        int GetPassCount(void) const;
+        ~Material(void){}
 
-        Shader* GetShader(void) const;
+        int GetMaterialsCount(void) const 
+        {
+            return 0;
+        }
 
+        int GetPassCount(void) const
+        {
+            return 0;
+        }
+
+        Shader* GetShader(void) const
+        {
+            return nullptr;
+        }
+        
     private:
         Shader* m_pShader;
         int m_queue;        
+        // Material Container.
     };
+ 
+    extern Material* GetErrorMaterial(void);
 }
 #endif

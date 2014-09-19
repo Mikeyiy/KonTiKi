@@ -6,9 +6,9 @@ namespace KonTiKi
     class Mesh
     {
     public:
-        Mesh(void);
-        virtual ~Mesh(void); 
-        
+        Mesh(void){};
+        virtual ~Mesh(void){}; 
+        int GetSubMeshCount(void){return 1;}        
     };
 }
 

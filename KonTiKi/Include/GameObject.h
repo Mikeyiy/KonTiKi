@@ -28,6 +28,8 @@
 
 namespace KonTiKi
 {
+    class Transform;
+    class Renderer;
     class GameObject : public Object
     {
         public:
@@ -39,16 +41,29 @@ namespace KonTiKi
 
 
             // Getters of Varialbles 
-            const Vector3 GetPosition(void) const
+            /*const Vector3 GetPosition(void) const
             {
                 return m_position;
+            }*/
+
+            Transform* GetTransform(void) const
+            {
+                return m_pTransform;
+            }
+
+            Renderer* GetRenderer(void) const
+            {
+                return m_pRenderer;
             }
          private:
          	void Init( void );
 
         private:
         	std::vector<Component*> m_components;
-            Vector3 m_position;
+            //Vector3 m_position;
+            Transform* m_pTransform;
+            
+            Renderer* m_pRenderer;
 
     };
 }

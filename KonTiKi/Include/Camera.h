@@ -33,7 +33,7 @@ namespace KonTiKi
    
         void Render(void);
 
-        void AddItemToRenderQueue(const Renderer& renderer);
+        void AddItemToRenderQueue(const RenderableItem* pItem);
 
     private: 
         // 
