@@ -7,21 +7,21 @@ namespace KonTiKi
     {
         return m_pParent;
     }
-
-    Transform* Transform::GetParent(void)
+/*
+    Transform* Transform::GetParent(void) const
     {
         return m_pParent;
     }
-
-    Vector3 Transform::GetForward(void)
+*/
+    Vector3 Transform::GetForward(void) const
     {
         Matrix4x4 mat = GetLocalToWorldMatrix();
         return mat.MultiplyVector(Vector3::forward);
     }
 
-    const Matrix4x4 Transform::GetLocalToWorldMatrix(void)
+    const Matrix4x4 Transform::GetLocalToWorldMatrix(void) const
     {
-        Transform* pParent = m_pParent;
+        const Transform* pParent = m_pParent;
         Matrix4x4 mat = GetLocalToParentMatrix();
         while(pParent)
         {
@@ -31,7 +31,7 @@ namespace KonTiKi
         return mat;
     }
 
-    const Matrix4x4 Transform::GetWorldToLocalMatrix(void)
+    const Matrix4x4 Transform::GetWorldToLocalMatrix(void) const
     {
         Matrix4x4 retMat = TRS(m_localPosition, m_localRotation, m_localScale);
         if(IsUnifiedScale())
@@ -86,7 +86,7 @@ namespace KonTiKi
 
     const Quaternion Transform::GetRotation(void) const
     {
-        Transform* pParent = m_pParent;
+        const Transform* pParent = m_pParent;
         Quaternion q = GetLocalRotation();
         while(pParent)
         {
@@ -96,12 +96,12 @@ namespace KonTiKi
         return q;
     }
 
-    const Vector3 Transform::GetPosition(void)
+    const Vector3 Transform::GetPosition(void) const
     {
         return GetLocalToWorldMatrix().MultiplyPoint3x4(m_localPosition);
     }
 
-    const Vector3 Transform::GetLossyScale(void)
+    const Vector3 Transform::GetLossyScale(void) const
     {
         Transform* pParent = m_pParent;
         Vector3 s = m_localScale;
@@ -113,12 +113,12 @@ namespace KonTiKi
         return s;
     }
 
-    const Matrix4x4 Transform::GetLocalToParentMatrix(void) 
+    const Matrix4x4 Transform::GetLocalToParentMatrix(void) const
     {
         return TRS(m_localPosition, m_localRotation, m_localScale);
     }
  
-    const bool Transform::IsUnifiedScale(void)
+    const bool Transform::IsUnifiedScale(void) const
     {
         return Equal(m_localScale.x, m_localScale.y) && Equal(m_localScale.y, m_localScale.z);    
     }

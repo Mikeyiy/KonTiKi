@@ -23,13 +23,14 @@
 #include <type_traits>
 #include <vector>
 #include "Object.h"
-#include "Component.h"
+//#include "Component.h"
 #include <Math/Vector.h>
 
 namespace KonTiKi
 {
     class Transform;
     class Renderer;
+    class Component;
     class GameObject : public Object
     {
         public:

@@ -35,13 +35,13 @@ namespace KonTiKi
 
             const Transform* GetParent(void) const; 
 
-            Transform* GetParent(void);
+            //Transform* GetParent(void) const;
 
-            Vector3 GetForward(void);
+            Vector3 GetForward(void) const;
 
-            const Matrix4x4 GetLocalToWorldMatrix(void);
+            const Matrix4x4 GetLocalToWorldMatrix(void) const;
 
-            const Matrix4x4 GetWorldToLocalMatrix(void);
+            const Matrix4x4 GetWorldToLocalMatrix(void) const;
 
             const Vector3 GetLocalEulerAngles(void) const;
 
@@ -57,12 +57,12 @@ namespace KonTiKi
 
             const Quaternion GetRotation(void) const;
 
-            const Vector3 GetPosition(void);
+            const Vector3 GetPosition(void) const;
 
-            const Vector3 GetLossyScale(void);
+            const Vector3 GetLossyScale(void) const;
         private:
-            const Matrix4x4 GetLocalToParentMatrix(void); 
-            const bool IsUnifiedScale(void);
+            const Matrix4x4 GetLocalToParentMatrix(void) const; 
+            const bool IsUnifiedScale(void) const;
         public:
             bool hasChanged;
         private:

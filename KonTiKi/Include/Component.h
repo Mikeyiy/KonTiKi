@@ -20,19 +20,23 @@
 #ifndef _COMPONENT_H_
 #define _COMPONENT_H_
 
-#include "Object.h"
-
+#include <Object.h>
+#include <GameObject.h>
 namespace KonTiKi
 {
-    class GameObject;
+    class Transform;
 
     class Component : public Object
     {
     public:
     	Component( GameObject* pAttatchedGameObject );
 
+        const Transform* GetTransform(void) const
+        {
+            return m_pGameObject->GetTransform();
+        }
     public:
-        GameObject* pGameObject;
+        GameObject* m_pGameObject;
     };
 }
 

@@ -14,9 +14,10 @@ namespace KonTiKi
         Mesh* m_pMesh;
         int m_meshIndex;
         Material* m_pMaterial;
+        float m_sqrDistance;
 
-        RenderableItem(Mesh* pMesh, int meshIndex, Material* pMaterial) 
-            : m_pMesh(pMesh), m_meshIndex(meshIndex), m_pMaterial(pMaterial)
+        RenderableItem(Mesh* pMesh, int meshIndex, Material* pMaterial, float sqrDistance) 
+            : m_pMesh(pMesh), m_meshIndex(meshIndex), m_pMaterial(pMaterial), m_sqrDistance(sqrDistance)
         {
         }
     };
@@ -31,14 +32,14 @@ namespace KonTiKi
     private:
         void CollectAndSort(std::list<GameObject*>& gameObjects); 
    
+        // Fill the command buffer.
         void Render(void);
 
         void AddItemToRenderQueue(const RenderableItem* pItem);
 
     private: 
         // 
-        std::list<GameObject*> OpaqueQueue;
-        std::list<GameObject*> TransparentQueue;
+        std::list<RenderableItem*> m_RenderQueue;
 
         Matrix4x4 m_projectionMatrix;
         

@@ -712,6 +712,11 @@ namespace KonTiKi
         ret.z = -rhs.z;
         return ret;
     }
+
+    inline const float SqrDistance(const Vector3& a, const Vector3& b)
+    {
+        return Dot(a, a) + Dot(b, b);
+    }
 }
 #endif
 

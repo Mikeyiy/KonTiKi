@@ -22,7 +22,7 @@
 
 namespace KonTiKi
 {
-	Component::Component( GameObject* pAttatchedGameObject ) : pGameObject(pAttatchedGameObject)
+	Component::Component( GameObject* pAttatchedGameObject ) : m_pGameObject(pAttatchedGameObject)
     {
 //        assert( pAttatchedGameObject );
     }
