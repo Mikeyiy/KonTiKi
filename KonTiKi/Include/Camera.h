@@ -4,6 +4,7 @@
 #include <cassert>
 #include <Component.h>
 #include <Math/Matrix.h>
+using namespace std;
 namespace KonTiKi
 {
     class Renderer;
@@ -26,10 +27,38 @@ namespace KonTiKi
 
         Renderer* m_pRenderer;
         int m_meshIndex;
-        RenderableItem(Renderer* pRenderer, int meshIndex) : m_pRenderer(pRenderer), m_meshIndex(meshIndex)
+        float m_sqrDistance;
+        RenderableItem(Renderer* pRenderer, int meshIndex, float sqrDistance) : m_pRenderer(pRenderer)
+            , m_meshIndex(meshIndex)
+            , m_sqrDistance(sqrDistance)
         {
         }
+
+        int GetRenderQueue(void)
+        {
+            return 0;
+        }
+
+        bool IsTransparent(void)
+        {
+            return false;
+        }
+
+        float GetDistance(void)
+        {
+            return m_sqrDistance;
+        }
     };
+
+    struct RenderQueueItem
+    {
+        int m_queueIndex;
+        list<RenderableItem*> m_opaqueRenderableList;
+        list<RenderableItem*> m_transparentRenderableList;
+    };
+
+    extern bool CompareRenderableItemDistance(const RenderableItem* a, const RenderableItem* b);
+    extern bool CompareRenderQueue(const RenderQueueItem* a, const RenderQueueItem* b); 
 
     class Camera : Component
     {
@@ -49,6 +78,7 @@ namespace KonTiKi
     private: 
         // 
         std::list<RenderableItem*> m_RenderQueue;
+        list<RenderQueueItem*> m_renderQueueItemList;
 
         Matrix4x4 m_projectionMatrix;
         

@@ -30,12 +30,12 @@ namespace KonTiKi
             assert(pRenderer->m_pMesh);
             int meshCount = pRenderer->m_pMesh->GetSubMeshCount();
             int materialCount = pRenderer->GetMaterialsCount(); 
+            float sqrDistance = SqrDistance(GetTransform()->GetPosition(), pRenderer->GetTransform()->GetPosition());
             for(int i=0; i != meshCount; ++i)
             {
-                float sqrDistance = SqrDistance(GetTransform()->GetPosition(), pRenderer->GetTransform()->GetPosition());
                 // TODO: Spawn RenderableItem form pool.
                 RenderableItem* pItem = nullptr;
-                pItem = new RenderableItem(pRenderer, i);
+                pItem = new RenderableItem(pRenderer, i, sqrDistance);
                 AddItemToRenderQueue(pItem);            
             }
         }
@@ -56,6 +56,124 @@ namespace KonTiKi
     {
         // 按RenderQueue排序。Queue相同的情况下，如果材质是透明的则根据离摄像机的距离排序，距离远的插在前，
         // 距离近的插在后；不透明材质则无需排序。 
-        m_RenderQueue.push_back(pItem);
+        assert(pItem);
+
+        // 获得该item的Queue值
+        int queue = pItem->GetRenderQueue();
+
+        if(m_renderQueueItemList.size() == 0)
+        {
+            RenderQueueItem* pRenderQueueItem = new RenderQueueItem();
+            pRenderQueueItem->m_queueIndex = queue;
+
+            m_renderQueueItemList.push_back(pRenderQueueItem);
+            if(pItem->IsTransparent())
+            {
+                pRenderQueueItem->m_transparentRenderableList.push_back(pItem);
+            }
+            else
+            {
+                pRenderQueueItem->m_opaqueRenderableList.push_back(pItem);
+            }
+        }
+        else 
+        {
+
+        RenderQueueItem rqItem;
+        rqItem.m_queueIndex = queue;
+        // 通过折半查找等于该Queue值的列表；如不存在则找到大于它的iterator，然后插于前方。
+        std::list<RenderQueueItem*>::iterator low = lower_bound(m_renderQueueItemList.begin()
+            , m_renderQueueItemList.end(), &rqItem, CompareRenderQueue);
+
+        if((*low)->m_queueIndex == queue)
+        {
+            RenderQueueItem* pRenderQueueItem = (*low); 
+
+            if(pItem->IsTransparent())
+            {
+                if(pRenderQueueItem->m_transparentRenderableList.size() == 0)
+                    pRenderQueueItem->m_transparentRenderableList.push_back(pItem);
+                else
+                {
+                    // 通过折半查找插入RenderableItem.
+                    std::list<RenderableItem*>::iterator low; 
+                    low = lower_bound(pRenderQueueItem->m_transparentRenderableList.begin(),
+                        pRenderQueueItem->m_transparentRenderableList.end(),
+                        pItem, CompareRenderableItemDistance);
+                    if(pItem->m_sqrDistance < (*low)->m_sqrDistance)
+                    {
+                        pRenderQueueItem->m_transparentRenderableList.push_back(pItem);
+                    }
+                    else
+                    {
+                        pRenderQueueItem->m_transparentRenderableList.insert(low, pItem);
+                    }
+                }
+            }
+            else
+            {
+                list<RenderableItem*>::iterator it
+                    = pRenderQueueItem->m_opaqueRenderableList.begin();
+                bool inserted = false;
+                for(; it != pRenderQueueItem->m_opaqueRenderableList.end(); ++it)
+                {
+                    if((*it)->m_pRenderer->GetMaterial() == pItem->m_pRenderer->GetMaterial())
+                    {
+                        pRenderQueueItem->m_opaqueRenderableList.insert(it, pItem);    
+                        inserted = true;
+                        break;
+                    }
+                }
+                if(!inserted)
+                {
+                    pRenderQueueItem->m_opaqueRenderableList.push_back(pItem);
+                }
+                pRenderQueueItem->m_opaqueRenderableList.push_back(pItem);
+            }
+        }
+        else if(queue < (*low)->m_queueIndex)
+        {
+            RenderQueueItem* pRenderQueueItem = new RenderQueueItem();
+            pRenderQueueItem->m_queueIndex = queue;
+
+            m_renderQueueItemList.insert(low, pRenderQueueItem);
+            if(pItem->IsTransparent())
+            {
+                pRenderQueueItem->m_transparentRenderableList.push_back(pItem);
+            }
+            else
+            {
+                pRenderQueueItem->m_opaqueRenderableList.push_back(pItem);
+            }
+        }
+        else
+        {
+            RenderQueueItem* pRenderQueueItem = new RenderQueueItem();
+            pRenderQueueItem->m_queueIndex = queue;
+
+            m_renderQueueItemList.push_back(pRenderQueueItem);
+            if(pItem->IsTransparent())
+            {
+                pRenderQueueItem->m_transparentRenderableList.push_back(pItem);
+            }
+            else
+            {
+                pRenderQueueItem->m_opaqueRenderableList.push_back(pItem);
+            }
+        }
+
+        }// 
+        // 获得该item是否是透明物件
+        // 如果是透明物件，则在透明列表中按距离插入。 
+    }
+
+    bool CompareRenderableItemDistance(const RenderableItem* a, const RenderableItem* b)
+    {
+        return a->m_sqrDistance > b->m_sqrDistance;
+    }
+
+    bool CompareRenderQueue(const RenderQueueItem* a, const RenderQueueItem* b)
+    {
+        return a->m_queueIndex < b->m_queueIndex;
     }
 }
