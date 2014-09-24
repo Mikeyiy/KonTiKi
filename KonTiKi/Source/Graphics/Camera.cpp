@@ -35,14 +35,7 @@ namespace KonTiKi
                 float sqrDistance = SqrDistance(GetTransform()->GetPosition(), pRenderer->GetTransform()->GetPosition());
                 // TODO: Spawn RenderableItem form pool.
                 RenderableItem* pItem = nullptr;
-                if( i < materialCount )
-                {
-                    pItem = new RenderableItem(pRenderer->m_pMesh, i, pRenderer->GetMaterials()[i], sqrDistance);
-                }
-                else
-                {
-                    pItem = new RenderableItem(pRenderer->m_pMesh, i, GetErrorMaterial(), sqrDistance);
-                }
+                pItem = new RenderableItem(pRenderer, i);
                 AddItemToRenderQueue(pItem);            
             }
         }
@@ -50,13 +43,19 @@ namespace KonTiKi
  
     void Camera::Render(void)
     {
-    
+        // 设置材质。
+        // 设置光源信息。
+        // 提交Mesh信息。 
     }
 
-    void Camera::AddItemToRenderQueue(const RenderableItem* pItem)
+    // 1. 按Queue值排序；
+    // 2. 相同Queue值：不透明物件排在前；如果是透明物件则由远至近排序；
+    // 3. 合并：不透明物件相同材质实例的物件的Mesh合入同一个Mesh成为SubMesh。透明物件也是如此，但需注意顺序不能变。 
+    // 4. Base Pass中光源不一致的物件不能合并为一个Mesh。(在搜集之前每个Renderer就整理好了一份光源列表)
+    void Camera::AddItemToRenderQueue(RenderableItem* pItem)
     {
-        assert(pItem && pItem->m_pMaterial);        
         // 按RenderQueue排序。Queue相同的情况下，如果材质是透明的则根据离摄像机的距离排序，距离远的插在前，
         // 距离近的插在后；不透明材质则无需排序。 
+        m_RenderQueue.push_back(pItem);
     }
 }

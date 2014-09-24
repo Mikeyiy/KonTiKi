@@ -7,17 +7,26 @@
 namespace KonTiKi
 {
     class Renderer;
-    class Material;
-    class Mesh;
+    //class Material;
+    //class Mesh;
     struct RenderableItem
     {
+/*
         Mesh* m_pMesh;
         int m_meshIndex;
         Material* m_pMaterial;
         float m_sqrDistance;
+        // Light source list.
 
         RenderableItem(Mesh* pMesh, int meshIndex, Material* pMaterial, float sqrDistance) 
             : m_pMesh(pMesh), m_meshIndex(meshIndex), m_pMaterial(pMaterial), m_sqrDistance(sqrDistance)
+        {
+        }
+*/
+
+        Renderer* m_pRenderer;
+        int m_meshIndex;
+        RenderableItem(Renderer* pRenderer, int meshIndex) : m_pRenderer(pRenderer), m_meshIndex(meshIndex)
         {
         }
     };
@@ -35,7 +44,7 @@ namespace KonTiKi
         // Fill the command buffer.
         void Render(void);
 
-        void AddItemToRenderQueue(const RenderableItem* pItem);
+        void AddItemToRenderQueue(RenderableItem* pItem);
 
     private: 
         // 

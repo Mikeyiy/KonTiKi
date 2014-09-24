@@ -4,6 +4,7 @@ namespace KonTiKi
 {
     class Matrix4x4;
     class Material;
+    class Mesh;
     class Renderer : Component
     {
     friend class Camera;
