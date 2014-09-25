@@ -9,6 +9,10 @@ namespace KonTiKi
         Mesh(void){};
         virtual ~Mesh(void){}; 
         int GetSubMeshCount(void){return 1;}        
+
+        // World transformed vertices.
+
+        // VBO info. VBO ptr, offsets
     };
 }
 
