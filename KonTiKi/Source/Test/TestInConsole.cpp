@@ -6,13 +6,36 @@
 #include <Math/ConstantDefine.h>
 #include <Math/Quaternion.h>
 #include <Transform.h>
+#include <GLUT/GLUT.h>
 using namespace KonTiKi;
+#if defined(__APPLE__)
+#define TEST_MACRO 100
+#endif
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_POLYGON);
+        glVertex2f(-0.5, -0.5);
+        glVertex2f(-0.5, 0.5);
+        glVertex2f(0.5, 0.5);
+        glVertex2f(0.5, -0.5);
+    glEnd();
+    glFlush();
+}
+
 
 int main(
     int    argc,
     char** argv
 )
 {
+    glutInit(&argc, argv);
+    glutCreateWindow("Xcode Glut Demo");
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    int a = TEST_MACRO;
     std::cout << "Test begin" << std::endl;
 
     GameEngine* pGameEngine = new GameEngine();

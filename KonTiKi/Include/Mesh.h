@@ -10,6 +10,10 @@ namespace KonTiKi
         virtual ~Mesh(void){}; 
         int GetSubMeshCount(void){return 1;}        
 
+        Vector3* vertices;
+        Vector2* uv;
+        int* triangles;
+
         // World transformed vertices.
 
         // VBO info. VBO ptr, offsets

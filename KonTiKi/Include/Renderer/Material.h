@@ -52,6 +52,15 @@ namespace KonTiKi
             return nullptr;
         }
         
+        const int GetRenderQueue(void) const
+        {
+            return m_queue;
+        }
+
+        const bool IsTransparent(void) const
+        {
+            return false;
+        }
     private:
         Shader* m_pShader;
         int m_queue;        

@@ -4,12 +4,11 @@
 #include <cassert>
 #include <Component.h>
 #include <Math/Matrix.h>
+#include <Renderer/Material.h>
+#include <Renderer/Renderer.h>
 using namespace std;
 namespace KonTiKi
 {
-    class Renderer;
-    //class Material;
-    //class Mesh;
     struct RenderableItem
     {
 /*
@@ -36,12 +35,12 @@ namespace KonTiKi
 
         int GetRenderQueue(void)
         {
-            return 0;
+            return m_pRenderer->GetMaterials()[m_meshIndex]->GetRenderQueue();
         }
 
         bool IsTransparent(void)
         {
-            return false;
+            return m_pRenderer->GetMaterials()[m_meshIndex]->IsTransparent();
         }
 
         float GetDistance(void)
