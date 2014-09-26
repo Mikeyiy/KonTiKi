@@ -6,6 +6,11 @@ namespace KonTiKi
     class IVertexDataBuffer
     {
     public:
+        enum VertexDataDeclaration
+        {
+            VDD_ 
+        };
+
         enum Usage
         {
             USAGE_STATIC_DRAW,
@@ -13,8 +18,7 @@ namespace KonTiKi
             USAGE_STREAM_DRAW,
         };
 
-        virtual BindFlag
-        {
+        enum Type {
             BF_ARRAY_BUFFER,
             BF_ELEMENT_ARRAY_BUFFER,
         };

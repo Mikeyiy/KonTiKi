@@ -46,6 +46,11 @@ namespace KonTiKi
         // 设置材质。
         // 设置光源信息。
         // 提交Mesh信息。 
+        std::list<RenderQueueItem*>::iterator it = m_renderQueueItemList.begin();
+        for(; it != m_renderQueueItemList.end(); ++it) 
+        {
+
+        }
     }
 
     // 1. 按Queue值排序；
