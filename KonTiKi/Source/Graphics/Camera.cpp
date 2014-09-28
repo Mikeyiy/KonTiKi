@@ -8,6 +8,7 @@
 #include <Renderer/Renderer.h>
 #include <Mesh.h>
 #include <Math/Vector.h>
+#include <Renderer/Pipeline.h>
 namespace KonTiKi
 {
     void Camera::CollectAndSort(std::list<GameObject*>& gameObjects)
@@ -43,6 +44,8 @@ namespace KonTiKi
  
     void Camera::Render(void)
     {
+         
+
         // 设置材质。
         // 设置光源信息。
         // 提交Mesh信息。 

@@ -35,27 +35,33 @@ namespace KonTiKi
 
     void GameEngine::Init( void )
     {
-        m_pRenderingSystem = new RenderingSystem();
-        m_pRenderingSystem->Start();
+//        m_pRenderingSystem = new RenderingSystem();
+//        m_pRenderingSystem->Start();
 
-        m_pInputSystem = new InputSystem();
-        m_pInputSystem->Start(); 
+//        m_pInputSystem = new InputSystem();
+//        m_pInputSystem->Start(); 
 
         // 初始化各个系统模块。
-        m_pGraphicsSystem = new GraphicsSystem();
+//        m_pGraphicsSystem = new GraphicsSystem();
+        
+        g_RenderingSystem.StartUp();
+        g_GraphicsSystem.StartUp();
     }
 
     void GameEngine::Update(void)
     {
-        m_pGraphicsSystem->Update();
+//        m_pGraphicsSystem->Update();
+        g_GraphicsSystem.Update();
     }
 
     void GameEngine::Destroy(void)
     {
-        delete m_pGraphicsSystem;
+//        delete m_pGraphicsSystem;
 
-        m_pInputSystem->Stop();
-        m_pRenderingSystem->Stop();
+//        m_pInputSystem->Stop();
+//        m_pRenderingSystem->Stop();
+        g_GraphicsSystem.ShutDown();
+        g_RenderingSystem.ShutDown();
     }
 
 }

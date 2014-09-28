@@ -35,6 +35,9 @@ namespace KonTiKi
         System( void ) {}
         virtual ~System( void ) {}
 
+        virtual void StartUp(void) = 0;
+        virtual void ShutDown(void) = 0;
+
     	void Update( float dt );
 
         static void AddGameObject( GameObject* pGameObject )

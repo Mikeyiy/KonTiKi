@@ -468,6 +468,14 @@ namespace KonTiKi
             m[3] = 0;
         }
 
+        Vector4(const Vector3& rhs, float w)
+        {
+            m[0] = rhs.x;
+            m[1] = rhs.y;
+            m[2] = rhs.z;
+            m[3] = w;
+        }
+
         Vector4(const Vector2& rhs)
         {
             m[0] = rhs.x;

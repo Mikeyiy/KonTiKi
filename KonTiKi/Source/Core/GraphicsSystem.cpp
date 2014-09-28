@@ -27,6 +27,10 @@
 #include <Log/Log.h>
 namespace KonTiKi
 {
+    virtual GraphicsSystem::StartUp(void) override {}
+
+    virtual GraphicsSystem::ShutDown(void) override {}
+
     void GraphicsSystem::Update(void)
     {
         std::vector<Camera*>::iterator cam_iterator = s_cameras.begin();

@@ -8,7 +8,9 @@ namespace KonTiKi
     public:
         enum VertexDataDeclaration
         {
-            VDD_ 
+            VDD_P4F_N3F_T2F,
+            VDD_P4F_T4F_N3F_T2F,
+            VDD_P4F_T4F_N3F_T2F_T2F_C4F, 
         };
 
         enum Usage

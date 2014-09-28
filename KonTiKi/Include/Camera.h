@@ -11,19 +11,6 @@ namespace KonTiKi
 {
     struct RenderableItem
     {
-/*
-        Mesh* m_pMesh;
-        int m_meshIndex;
-        Material* m_pMaterial;
-        float m_sqrDistance;
-        // Light source list.
-
-        RenderableItem(Mesh* pMesh, int meshIndex, Material* pMaterial, float sqrDistance) 
-            : m_pMesh(pMesh), m_meshIndex(meshIndex), m_pMaterial(pMaterial), m_sqrDistance(sqrDistance)
-        {
-        }
-*/
-
         Renderer* m_pRenderer;
         int m_meshIndex;
         float m_sqrDistance;

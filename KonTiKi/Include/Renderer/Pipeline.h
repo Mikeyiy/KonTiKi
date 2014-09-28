@@ -3,6 +3,58 @@
 #include <Renderer/IVertexDataBuffer.h>
 namespace KonTiKi
 {
+    enum Unify3DDeclType
+    {
+        UNIFYDECLTYPE_FLOAT1;
+        UNIFYDECLTYPE_FLOAT2;
+        UNIFYDECLTYPE_FLOAT3;
+        UNIFYDECLTYPE_FLOAT4;
+    };
+
+    enum Unify3DDeclMethod
+    {
+        UNIFYDECLMETHOD_DEFAULT = 0;
+    };
+
+    enum Unify3DDeclUsage
+    {
+        UNIFYDECLUSAGE_POSITION;
+        UNIFYDECLUSAGE_BLENDWEIGHT = 1;
+        UNIFYDECLUSAGE_BLENDINDICES = 2;
+        UNIFYDECLUSAGE_NORMAL = 3;
+        UNIFYDECLUSAGE_PSIZE = 4;
+        UNIFYDECLUSAGE_TEXCOORD = 5;
+        UNIFYDECLUSAGE_TANGENT = 6;
+        UNIFYDECLUSAGE_BINORMAL = 7;
+        UNIFYDECLUSAGE_TESSFACTOR = 8;
+        UNIFYDECLUSAGE_POSITIONT = 9;
+        UNIFYDECLUSAGE_COLOR = 10;
+        UNIFYDECLUSAGE_FOG = 11;
+        UNIFYDECLUSAGE_DEPTH = 12;
+        UNIFYDECLUSAGE_SAMPLE = 13;
+    };
+
+    struct Unify3DVertextElementCG
+    {
+        unsigned short stream;
+        unsigned short offset;
+        byte type;
+        byte method;
+        byte usage;
+        byte usageIndex;
+    };
+
+    //     
+    class IUnify3DVertexDeclaration
+    {
+    class IUnify3DDeviceCG;
+    public:
+        // Get the vertex shader declaration.
+        bool GetDeclaration(Unify3DVertexElementCG* pDecl, unsigned* pNumElements);
+        // Pointer to the IUnify3DDeviceCG interface that is returned.
+        bool GetDevice(IUnify3DDeviceCG** ppDevice);
+    }; 
+
     class RenderCommand
     {
     public:
@@ -90,6 +142,19 @@ namespace KonTiKi
         };
     };
 
+    class IUnify3DVertexShader
+    {
+    public:
+        virtual IUnify3DDeviceCG* GetDevice(void);
+        // If OpenGL, return handle.
+        // If DX, return pointer to a buffer that contains the shader data. 
+        virtual void* GetFunction(void);
+
+        vitual char* GetCompiledLog(void);
+        // D3DCONSTANTTABLE like.
+        virtual Unify3DConstantTable* GetConstantTable(void);
+    };
+
     // IDirect3DDevice9 like.
     class IUnify3DDeviceCG
     {
@@ -100,14 +165,25 @@ namespace KonTiKi
 
         virtual void SetViewport(int x, int y, unsigned w, unsigned h) = 0;
 
-        // 注：和DX不一样,最后一个参数DX是输入图元数量。
-        virtual void DrawPrimitive(RenderCMD::Topology topology, unsigned startVertex, unsigned verticesCount) = 0; 
-
-        // 
-        virtual void DrawIndexedPrimitive(RenderCMD::Topology topology, unsigned indicesCount, unsigned short* indices) = 0;
-
         virtual bool CreateVertexDataBuffer(IVertexDataBuffer::Type type, unsigned size, void* data
             , IVertexDataBuffer::Usage, IVertexDataBuffer** ppVertexDataBuffer) = 0;
+
+        virtual bool SetStreamSource(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride);
+
+        virtual bool SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl);
+
+        virtual bool LoadVertexShaderFromMemery(const char* shaderSrc, IUnify3DVertexShader* pShader) = 0;
+        virtual bool SetVertexShader(IUnify3DVertexShader* pShader);
+
+        virtual bool SetIndices(IVertexDataBuffer* pIndexData);
+
+        // 注：和DX不一样,最后一个参数DX是输入图元数量。
+        virtual void DrawPrimitive(RenderCMD::Topology topology, unsigned startVertex
+            , unsigned verticesCount) = 0; 
+
+        // 
+        virtual void DrawIndexedPrimitive(RenderCMD::Topology topology
+            , unsigned indicesCount, unsigned short* indices) = 0;
     };
 
     // 该接口用于统一D3D9级别的图形API。由全局函数Unify3DCreateXX函数创建。
