@@ -6,6 +6,7 @@ include_directories(Include)
 #参考文章"CMake,OpenGL,and GLX on OS X"
 if(APPLE)
     include_directories(/System/Library/Frameworks) 
+    include_directories(ThirdParty/include) 
     find_library(COCOA_LIBRARY Cocoa)
     find_library(GLUT_LIBRARY GLUT)
     find_library(OpenGL_LIBRARY OpenGL)
@@ -25,6 +26,7 @@ add_library(kontiki Source/Core/Object.cpp
                     Source/Graphics/Camera.cpp
                     Source/Core/RenderingSystem.cpp
                     Source/Renderer/Material.cpp
+                    Source/Renderer/GLES2/Unify3DDeviceGLES2.cpp
            )
 
 add_executable(testKonTiKi Source/Test/TestInConsole.cpp

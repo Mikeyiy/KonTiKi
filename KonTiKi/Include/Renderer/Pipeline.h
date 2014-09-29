@@ -59,6 +59,12 @@ namespace KonTiKi
     class RenderCommand
     {
     public:
+        enum RS_Bool
+        {
+            FALSE,
+            TRUE,
+        };
+
         // Command Type.
         enum CommandType 
         {
@@ -137,9 +143,9 @@ namespace KonTiKi
 
         enum Clear
         {
-            CLR_STENCIL,
-            CLR_TARGET,
-            CLR_ZBUFFER,
+            CLR_STENCIL = 1,
+            CLR_TARGET = 1 << 1,
+            CLR_ZBUFFER = 1 << 2,
         };
     };
 
@@ -163,23 +169,23 @@ namespace KonTiKi
     class IUnify3DDeviceCG
     {
     public:
-        virtual void Clear(int flag, const Vector3& color, float z, int stencil) = 0;
+        virtual void Clear(int flag, const Vector4& color, float z, int stencil) = 0;
 
         virtual bool SetRenderState(RenderCommand::CommandType cmd, int value) = 0;
 
         virtual void SetViewport(int x, int y, unsigned w, unsigned h) = 0;
 
         virtual bool CreateVertexDataBuffer(IVertexDataBuffer::Type type, unsigned size, void* data
-            , IVertexDataBuffer::Usage, IVertexDataBuffer** ppVertexDataBuffer) = 0;
+            , IVertexDataBuffer::Usage usage, IVertexDataBuffer** ppVertexDataBuffer) = 0;
 
-        virtual bool SetStreamSource(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride);
+        virtual bool SetStreamSource(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride) = 0;
 
-        virtual bool SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl);
+        virtual bool SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl) = 0;
 
-        virtual bool LoadVertexShaderFromMemery(const char* shaderSrc, IUnify3DVertexShader* pShader) = 0;
-        virtual bool SetVertexShader(IUnify3DVertexShader* pShader);
+        virtual bool LoadVertexShaderFromMemory(const char* shaderSrc, IUnify3DVertexShader* pShader) = 0;
+        virtual bool SetVertexShader(IUnify3DVertexShader* pShader) = 0;
 
-        virtual bool SetIndices(IVertexDataBuffer* pIndexData);
+        virtual bool SetIndices(IVertexDataBuffer* pIndexData) = 0;
 
         // 注：和DX不一样,最后一个参数DX是输入图元数量。
         virtual void DrawPrimitive(RenderCommand::Topology topology, unsigned startVertex
@@ -187,7 +193,7 @@ namespace KonTiKi
 
         // 
         virtual void DrawIndexedPrimitive(RenderCommand::Topology topology
-            , unsigned indicesCount, unsigned short* indices) = 0;
+            , unsigned indicesCount, const void* indices) = 0;
     };
 
     // 该接口用于统一D3D9级别的图形API。由全局函数Unify3DCreateXX函数创建。
