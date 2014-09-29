@@ -31,7 +31,9 @@ namespace KonTiKi
     public:
     	GraphicsSystem( void ) {}
     	~GraphicsSystem( void ) {}
-    
+
+        virtual void StartUp(void) override;
+        virtual void ShutDown(void) override; 
         void Update( void );
     };
 }

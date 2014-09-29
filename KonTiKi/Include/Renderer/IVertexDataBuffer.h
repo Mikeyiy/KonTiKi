@@ -6,12 +6,6 @@ namespace KonTiKi
     class IVertexDataBuffer
     {
     public:
-        enum VertexDataDeclaration
-        {
-            VDD_P4F_N3F_T2F,
-            VDD_P4F_T4F_N3F_T2F,
-            VDD_P4F_T4F_N3F_T2F_T2F_C4F, 
-        };
 
         enum Usage
         {
@@ -25,15 +19,17 @@ namespace KonTiKi
             BF_ELEMENT_ARRAY_BUFFER,
         };
 
-        IVertexDataBuffer(void){}    
+        IVertexDataBuffer(Type type, unsigned size, const void* data, Usage usage): m_type(type)
+            , m_size(size), m_usage(usage){}    
         virtual ~IVertexDataBuffer(void){}
-
+/*
         virtual void Init(BindFlag bindFlag, unsigned size, const void* data, Usage usage)
         {
             m_bindFlag = bindFlag;
             m_usage = usage;
             m_size = size;
         }
+*/
 
         unsigned GetSize(void) const
         {
@@ -42,9 +38,9 @@ namespace KonTiKi
 
         virtual void Update(unsigned offset, unsigned size, const void* data);  
 
-        BindFlag GetBindFlag(void) const
+        Type GetBindFlag(void) const
         {
-            return m_bindFlag;
+            return m_type;
         }
 
         Usage GetUsage(void) const
@@ -53,7 +49,8 @@ namespace KonTiKi
         }
 
     private:
-        BindFlag m_bindFlag;
+        //BindFlag m_bindFlag;
+        Type m_type;
         Usage m_usage;
         unsigned m_size;
     };

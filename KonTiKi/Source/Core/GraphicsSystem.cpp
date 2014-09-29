@@ -27,9 +27,9 @@
 #include <Log/Log.h>
 namespace KonTiKi
 {
-    virtual GraphicsSystem::StartUp(void) override {}
+    void GraphicsSystem::StartUp(void) {}
 
-    virtual GraphicsSystem::ShutDown(void) override {}
+    void GraphicsSystem::ShutDown(void) {}
 
     void GraphicsSystem::Update(void)
     {

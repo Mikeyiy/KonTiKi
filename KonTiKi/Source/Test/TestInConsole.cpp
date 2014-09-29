@@ -30,14 +30,14 @@ int main(
     char** argv
 )
 {
-    glutInit(&argc, argv);
+/*    glutInit(&argc, argv);
     glutCreateWindow("Xcode Glut Demo");
     glutDisplayFunc(display);
     glutMainLoop();
 
     int a = TEST_MACRO;
     std::cout << "Test begin" << std::endl;
-
+*/
     GameEngine* pGameEngine = new GameEngine();
 
     Matrix4x4 mat;

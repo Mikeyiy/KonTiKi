@@ -40,12 +40,14 @@
 
 #include <vector>
 #include "Object.h"
-
+#include <RenderingSystem.h>
+#include <GraphicsSystem.h>
 namespace KonTiKi
 {
-    class RenderingSystem;
-    class InputSystem;
-    class GraphicsSystem;
+//    class InputSystem;
+
+    extern RenderingSystem g_RenderingSystem;
+    extern GraphicsSystem g_GraphicsSystem;
 
     class GameEngine : public Object
     {
@@ -58,10 +60,6 @@ namespace KonTiKi
     	void Init(void);
         void Destroy(void);
 
-    private:
-        RenderingSystem* m_pRenderingSystem;
-        InputSystem* m_pInputSystem;
-        GraphicsSystem* m_pGraphicsSystem;
     };
 }
 

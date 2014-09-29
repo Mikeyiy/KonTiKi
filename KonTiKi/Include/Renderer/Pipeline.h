@@ -1,47 +1,48 @@
 #ifndef _PIPELINE_H_
 #define _PIPELINE_H_
 #include <Renderer/IVertexDataBuffer.h>
+#include <Math/Vector.h>
 namespace KonTiKi
 {
     enum Unify3DDeclType
     {
-        UNIFYDECLTYPE_FLOAT1;
-        UNIFYDECLTYPE_FLOAT2;
-        UNIFYDECLTYPE_FLOAT3;
-        UNIFYDECLTYPE_FLOAT4;
+        UNIFYDECLTYPE_FLOAT1,
+        UNIFYDECLTYPE_FLOAT2,
+        UNIFYDECLTYPE_FLOAT3,
+        UNIFYDECLTYPE_FLOAT4,
     };
 
     enum Unify3DDeclMethod
     {
-        UNIFYDECLMETHOD_DEFAULT = 0;
+        UNIFYDECLMETHOD_DEFAULT = 0,
     };
 
     enum Unify3DDeclUsage
     {
-        UNIFYDECLUSAGE_POSITION;
-        UNIFYDECLUSAGE_BLENDWEIGHT = 1;
-        UNIFYDECLUSAGE_BLENDINDICES = 2;
-        UNIFYDECLUSAGE_NORMAL = 3;
-        UNIFYDECLUSAGE_PSIZE = 4;
-        UNIFYDECLUSAGE_TEXCOORD = 5;
-        UNIFYDECLUSAGE_TANGENT = 6;
-        UNIFYDECLUSAGE_BINORMAL = 7;
-        UNIFYDECLUSAGE_TESSFACTOR = 8;
-        UNIFYDECLUSAGE_POSITIONT = 9;
-        UNIFYDECLUSAGE_COLOR = 10;
-        UNIFYDECLUSAGE_FOG = 11;
-        UNIFYDECLUSAGE_DEPTH = 12;
-        UNIFYDECLUSAGE_SAMPLE = 13;
+        UNIFYDECLUSAGE_POSITION,
+        UNIFYDECLUSAGE_BLENDWEIGHT = 1,
+        UNIFYDECLUSAGE_BLENDINDICES = 2,
+        UNIFYDECLUSAGE_NORMAL = 3,
+        UNIFYDECLUSAGE_PSIZE = 4,
+        UNIFYDECLUSAGE_TEXCOORD = 5,
+        UNIFYDECLUSAGE_TANGENT = 6,
+        UNIFYDECLUSAGE_BINORMAL = 7,
+        UNIFYDECLUSAGE_TESSFACTOR = 8,
+        UNIFYDECLUSAGE_POSITIONT = 9,
+        UNIFYDECLUSAGE_COLOR = 10,
+        UNIFYDECLUSAGE_FOG = 11,
+        UNIFYDECLUSAGE_DEPTH = 12,
+        UNIFYDECLUSAGE_SAMPLE = 13,
     };
 
-    struct Unify3DVertextElementCG
+    struct Unify3DVertexElementCG
     {
         unsigned short stream;
         unsigned short offset;
-        byte type;
-        byte method;
-        byte usage;
-        byte usageIndex;
+        char type;
+        char method;
+        char usage;
+        char usageIndex;
     };
 
     //     
@@ -142,17 +143,20 @@ namespace KonTiKi
         };
     };
 
+    class Unify3DConstantTable;
+
+    class IUnify3DDeviceCG;
     class IUnify3DVertexShader
     {
     public:
         virtual IUnify3DDeviceCG* GetDevice(void);
         // If OpenGL, return handle.
         // If DX, return pointer to a buffer that contains the shader data. 
-        virtual void* GetFunction(void);
+        virtual void* GetFunction(void) = 0;
 
-        vitual char* GetCompiledLog(void);
+        virtual char* GetCompiledLog(void) = 0;
         // D3DCONSTANTTABLE like.
-        virtual Unify3DConstantTable* GetConstantTable(void);
+        virtual Unify3DConstantTable* GetConstantTable(void) = 0;
     };
 
     // IDirect3DDevice9 like.
@@ -178,11 +182,11 @@ namespace KonTiKi
         virtual bool SetIndices(IVertexDataBuffer* pIndexData);
 
         // 注：和DX不一样,最后一个参数DX是输入图元数量。
-        virtual void DrawPrimitive(RenderCMD::Topology topology, unsigned startVertex
+        virtual void DrawPrimitive(RenderCommand::Topology topology, unsigned startVertex
             , unsigned verticesCount) = 0; 
 
         // 
-        virtual void DrawIndexedPrimitive(RenderCMD::Topology topology
+        virtual void DrawIndexedPrimitive(RenderCommand::Topology topology
             , unsigned indicesCount, unsigned short* indices) = 0;
     };
 

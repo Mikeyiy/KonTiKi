@@ -28,6 +28,10 @@
 
 namespace KonTiKi
 {
+
+    RenderingSystem g_RenderingSystem;
+    GraphicsSystem g_GraphicsSystem;
+
     GameEngine::GameEngine( void )
     {
         Init();

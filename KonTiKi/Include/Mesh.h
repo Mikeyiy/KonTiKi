@@ -3,14 +3,15 @@
 
 namespace KonTiKi
 {
+    class IVertexDataBuffer;
     class Mesh
     {
     public:
         Mesh(void) : m_verticesCount(0), m_indicesCount(0), m_vertices(nullptr)
             , m_tangents(nullptr)
             , m_normals(nullptr), m_uv(nullptr), m_uv1(nullptr)
-            , m_colors(nullptr), m_triangles(nullptr), m_vertexBuffer(null_ptr)
-            , m_indexBuffer(nullptr)
+            , m_colors(nullptr), m_triangles(nullptr), m_pVertexBuffer(nullptr)
+            , m_pIndexBuffer(nullptr)
         {};
         virtual ~Mesh(void){}; 
         int GetSubMeshCount(void){return 1;}        

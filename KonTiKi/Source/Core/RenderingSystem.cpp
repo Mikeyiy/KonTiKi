@@ -1,18 +1,15 @@
 #include <RenderingSystem.h>
-
+#include <Renderer/Pipeline.h>
 namespace KonTiKi
 {
-    class RenderingSystem : System
+    void RenderingSystem::StartUp(void)
     {
-    public: 
-        virtual void RenderingSystem::StartUp(void) override
-        {
-            
-        }
+          
+    }
 
-        virtual void RenderingSystem::ShutDown(void) override
-        {
+    void RenderingSystem::ShutDown(void)
+    {
             
-        }
-    };
+    }
+   
 }
