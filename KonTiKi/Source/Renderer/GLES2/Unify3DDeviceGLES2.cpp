@@ -1,6 +1,7 @@
 #include <Renderer/GLES2/Unify3DDeviceGLES2.h>
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
+#include <Renderer/GLES2/VertexDataBufferGLES2.h>
 
 namespace KonTiKi
 {
@@ -45,12 +46,76 @@ namespace KonTiKi
             }
         break;    
         case RenderCommand::RCMD_CULL : 
+            if(value != RenderCommand::CULL_OFF)
+            {
+                glEnable(GL_CULL_FACE);
+                if(value == RenderCommand::CULL_BACK)
+                {
+                    glCullFace(GL_BACK);
+                }
+                else
+                {
+                    glCullFace(GL_FRONT);
+                }
+            }
+            else
+            {
+                glDisable(GL_CULL_FACE);
+            }
         break;    
         case RenderCommand::RCMD_ZWRITE : 
+            if( value == RenderCommand::FALSE)
+            {
+                glDepthMask(GL_FALSE);
+            }
+            else
+            {
+                glDepthMask(GL_TRUE);
+            }
         break;    
         case RenderCommand::RCMD_ZTEST : 
-        break;    
-        case RenderCommand::RCMD_OFFSET : 
+            glEnable(GL_DEPTH_TEST);
+            GLenum func;
+            switch(value)
+            {
+            case RenderCommand::ZTEST_LESS:
+            default: 
+                {
+                     func = GL_LESS;
+                }
+            break;
+            case RenderCommand::ZTEST_GREATER:
+                {
+                     func = GL_GREATER; 
+                }
+            break;
+            case RenderCommand::ZTEST_LEQUAL:
+                {
+                     func = GL_LEQUAL; 
+                }
+            break;
+            case RenderCommand::ZTEST_GEQUAL:
+                {
+                     func = GL_GEQUAL; 
+                }
+            break;
+            case RenderCommand::ZTEST_EQUAL:
+                {
+                     func = GL_EQUAL; 
+                }
+            break;
+            case RenderCommand::ZTEST_NOT_EQUAL:
+                {
+                     func = GL_NOTEQUAL; 
+                }
+            break;
+            case RenderCommand::ZTEST_ALWAYS:
+                {
+                     func = GL_ALWAYS; 
+                }
+            break;
+            }
+            glDepthFunc(func);
         break;    
         default:
         break;
@@ -58,10 +123,26 @@ namespace KonTiKi
         
     } 
 
-    void Unify3DDeviceGLES2::SetViewport(int x, int y, unsigned w, unsigned h){} 
+    void Unify3DDeviceGLES2::SetViewport(int x, int y, unsigned w, unsigned h)
+    {
+        glViewport(x, y, w, h);
+    } 
 
     bool Unify3DDeviceGLES2::CreateVertexDataBuffer(IVertexDataBuffer::Type type, unsigned size, void* data
-            , IVertexDataBuffer::Usage usage, IVertexDataBuffer** ppVertexDataBuffer){} 
+            , IVertexDataBuffer::Usage usage, IVertexDataBuffer** ppVertexDataBuffer)
+    {
+        IVertexDataBuffer* pVB = new VertexDataBufferGLES2(type, size, data, usage);
+        if(pVB)
+        {
+            ppVertexDataBuffer = &pVB;
+            return true;
+        }
+        else
+        {
+            ppVertexDataBuffer = nullptr;
+            return false;
+        }
+    } 
 
     bool Unify3DDeviceGLES2::SetStreamSource(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride){} 
 

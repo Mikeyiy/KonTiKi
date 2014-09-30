@@ -27,6 +27,7 @@ add_library(kontiki Source/Core/Object.cpp
                     Source/Core/RenderingSystem.cpp
                     Source/Renderer/Material.cpp
                     Source/Renderer/GLES2/Unify3DDeviceGLES2.cpp
+                    Source/Renderer/GLES2/VertexDataBufferGLES2.cpp
            )
 
 add_executable(testKonTiKi Source/Test/TestInConsole.cpp

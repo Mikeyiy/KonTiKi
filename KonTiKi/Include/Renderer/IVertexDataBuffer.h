@@ -22,23 +22,15 @@ namespace KonTiKi
         IVertexDataBuffer(Type type, unsigned size, const void* data, Usage usage): m_type(type)
             , m_size(size), m_usage(usage){}    
         virtual ~IVertexDataBuffer(void){}
-/*
-        virtual void Init(BindFlag bindFlag, unsigned size, const void* data, Usage usage)
-        {
-            m_bindFlag = bindFlag;
-            m_usage = usage;
-            m_size = size;
-        }
-*/
 
         unsigned GetSize(void) const
         {
             return m_size;
         }
 
-        virtual void Update(unsigned offset, unsigned size, const void* data);  
+        virtual void Update(unsigned offset, unsigned size, const void* data) = 0;  
 
-        Type GetBindFlag(void) const
+        Type GetType(void) const
         {
             return m_type;
         }
