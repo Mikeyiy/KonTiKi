@@ -1,6 +1,5 @@
 #include <Renderer/GLES2/Unify3DDeviceGLES2.h>
-#include <OpenGLES/ES2/gl.h>
-#include <OpenGLES/ES2/glext.h>
+#include <GLES2/gl2.h>
 #include <Renderer/GLES2/VertexDataBufferGLES2.h>
 
 namespace KonTiKi
@@ -144,17 +143,158 @@ namespace KonTiKi
         }
     } 
 
-    bool Unify3DDeviceGLES2::SetStreamSource(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride){} 
+    bool Unify3DDeviceGLES2::CreateVertexDeclaration(Unify3DVertexElementCG* pVertexElements, unsigned numElements, IUnify3DVertexDeclaration** ppDecl)
+    {
+        IUnify3DVertexDeclaration* pDecl = new IUnify3DVertexDeclaration(pVertexElements, numElements, (IUnify3DDeviceCG*)this);        
+        ppDecl = &pDecl;
+        return true;
+    }
 
-    bool Unify3DDeviceGLES2::SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl){} 
+    bool Unify3DDeviceGLES2::SetVertices(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride, IUnify3DVertexDeclaration* pDecl)
+{
+    Unify3DVertexElementCG** ppDecl;
+    unsigned* pNumElements;
 
-    bool Unify3DDeviceGLES2::LoadVertexShaderFromMemory(const char* shaderSrc, IUnify3DVertexShader* pShader){} 
+    pDecl->GetDeclaration(ppDecl, pNumElements);            
+    VertexDataBufferGLES2* pVertexDataBuffer = dynamic_cast<VertexDataBufferGLES2*>(pStreamData); 
+    unsigned bufferId = pVertexDataBuffer->GetBufferId();
+    GLuint offset = offsetInByte;
+    glBindBuffer(GL_ARRAY_BUFFER, bufferId);
 
-    bool Unify3DDeviceGLES2::SetVertexShader(IUnify3DVertexShader* pShader){} 
+    for(int i = 0; i != *pNumElements; ++i)
+    {
+        Unify3DVertexElementCG vertexElement = (*ppDecl)[i];
+        int declUsage = vertexElement.usage; 
 
-    bool Unify3DDeviceGLES2::SetIndices(IVertexDataBuffer* pIndexData){} 
+        unsigned vertexAttribIndex = 0;
+        int componentSize = 0;
+        
+        switch(declUsage)
+        {
+        case UNIFYDECLUSAGE_POSITION:
+        vertexAttribIndex = VERTEX_POS_INDEX; 
+        glBindAttribLocation(m_program, VERTEX_POS_INDEX, "v_position");
+        break;
+        case UNIFYDECLUSAGE_NORMAL:
+        vertexAttribIndex = VERTEX_NORMAL_INDEX;
+        glBindAttribLocation(m_program, VERTEX_NORMAL_INDEX, "v_normal");
+        break;
+        case UNIFYDECLUSAGE_TEXCOORD:
+        if(vertexElement.usageIndex == 0)
+        {
+            vertexAttribIndex = VERTEX_TEXCOORD0_INDEX;
+            glBindAttribLocation(m_program, VERTEX_TEXCOORD0_INDEX, "v_texcoord0");
+        }
+        else
+        {
+            vertexAttribIndex = VERTEX_TEXCOORD1_INDEX;
+            glBindAttribLocation(m_program, VERTEX_TEXCOORD1_INDEX, "v_texcoord1");
+        }
+        break;
+        default:
+        break;
+        }
+        glEnableVertexAttribArray(vertexAttribIndex);
+        
+        offset += vertexElement.offset; 
+
+        switch(vertexElement.type)
+        { 
+        case UNIFYDECLTYPE_FLOAT1:
+        componentSize = 1;
+        break;
+        case UNIFYDECLTYPE_FLOAT2:
+        componentSize = 2;
+        break;
+        case UNIFYDECLTYPE_FLOAT3:
+        componentSize = 3;
+        break;
+        case UNIFYDECLTYPE_FLOAT4:
+        componentSize = 4;
+        break;
+        default:
+        break;
+        }
+
+        glVertexAttribPointer(vertexAttribIndex, componentSize, GL_FLOAT, GL_FALSE, 0, (const void*)offset);
+    }
+} 
+
+    //bool Unify3DDeviceGLES2::SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl){} 
+
+    bool Unify3DDeviceGLES2::LoadVertexShaderFromMemory(const char* shaderSrc, IUnify3DVertexShader** ppShader)
+    {
+        GLuint shaderHandle = glCreateShader(GL_VERTEX_SHADER);
+        glShaderSource(shaderHandle, 1, &shaderSrc, nullptr);
+
+        glCompileShader(shaderHandle);
+
+        // Test if compilation succeeded.
+        GLint shaderCompiled;
+        glGetShaderiv(shaderHandle, GL_COMPILE_STATUS, &shaderCompiled);
+ 
+        if(!shaderCompiled)
+        {
+            glDeleteShader(shaderHandle);
+            return false;
+        }
+
+        Unify3DVertexShaderGLES2* pShader = new Unify3DVertexShaderGLES2(shaderHandle, this);                
+        *ppShader = pShader;
+    } 
+
+    bool Unify3DDeviceGLES2::SetVertexShader(IUnify3DVertexShader* pShader)
+    {
+        m_pVertexShader = pShader; 
+ 
+        return true;
+    } 
+
+    bool Unify3DDeviceGLES2::LoadFragmentShaderFromMemory(const char* shaderSrc, IUnify3DFragmentShader** ppShader)
+    {
+        GLuint shaderHandle = glCreateShader(GL_FRAGMENT_SHADER);
+        glShaderSource(shaderHandle, 1, &shaderSrc, nullptr);
+
+        glCompileShader(shaderHandle);
+
+        // Test if compilation succeeded.
+        GLint shaderCompiled;
+        glGetShaderiv(shaderHandle, GL_COMPILE_STATUS, &shaderCompiled);
+ 
+        if(!shaderCompiled)
+        {
+            glDeleteShader(shaderHandle);
+            return false;
+        }
+
+        Unify3DFragmentShaderGLES2* pShader = new Unify3DFragmentShaderGLES2(shaderHandle, this);                
+        *ppShader = pShader;
+     
+        return true;
+    } 
+
+    bool Unify3DDeviceGLES2::SetFragmentShader(IUnify3DFragmentShader* pShader)
+    {
+        m_pFragmentShader = pShader; 
+    } 
+
+
+    bool Unify3DDeviceGLES2::SetIndices(IVertexDataBuffer* pIndexData)
+    {
+        m_pIndexData = pIndexData;
+        return true;
+    } 
+
+    
 
     void Unify3DDeviceGLES2::DrawPrimitive(RenderCommand::Topology topology, unsigned startVertex, unsigned verticesCount){} 
 
-    void Unify3DDeviceGLES2::DrawIndexedPrimitive(RenderCommand::Topology, unsigned indicesCount, const void* indices){} 
+    void Unify3DDeviceGLES2::DrawIndexedPrimitive(RenderCommand::Topology, unsigned indicesCount, const void* indices)
+{
+    // 
+        
+
+   // VertexDataBufferGLES2* pVertexDataBuffer = dynamic_cast<VertexDataBufferGLES2*>(pStreamData); 
+    //unsigned bufferId = pVertexDataBuffer->GetBufferId();
+} 
 }

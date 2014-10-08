@@ -40,7 +40,8 @@ namespace KonTiKi
             return m_usage;
         }
 
-    private:
+
+    protected:
         //BindFlag m_bindFlag;
         Type m_type;
         Usage m_usage;

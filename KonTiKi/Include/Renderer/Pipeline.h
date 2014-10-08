@@ -46,14 +46,32 @@ namespace KonTiKi
     };
 
     //     
+
+    class IUnify3DDeviceCG;
     class IUnify3DVertexDeclaration
     {
-    class IUnify3DDeviceCG;
     public:
+       IUnify3DVertexDeclaration(Unify3DVertexElementCG* pDecl, unsigned numElements, IUnify3DDeviceCG* pDevice) : m_pDecl(pDecl), m_numElements(numElements), m_pDevice(pDevice) {}
+
         // Get the vertex shader declaration.
-        bool GetDeclaration(Unify3DVertexElementCG* pDecl, unsigned* pNumElements);
+        bool GetDeclaration(Unify3DVertexElementCG** ppDecl, unsigned* pNumElements)
+        {
+            ppDecl = &m_pDecl; 
+            pNumElements = &m_numElements;
+            return true;
+        }
+
         // Pointer to the IUnify3DDeviceCG interface that is returned.
-        bool GetDevice(IUnify3DDeviceCG** ppDevice);
+        bool GetDevice(IUnify3DDeviceCG** ppDevice)
+        {
+            ppDevice = &m_pDevice;
+            return true;
+        }
+
+    private:
+        Unify3DVertexElementCG* m_pDecl;
+        unsigned m_numElements;
+        IUnify3DDeviceCG* m_pDevice;
     }; 
 
     class RenderCommand
@@ -155,15 +173,29 @@ namespace KonTiKi
     class IUnify3DVertexShader
     {
     public:
-        virtual IUnify3DDeviceCG* GetDevice(void);
+        virtual IUnify3DDeviceCG* GetDevice(void) const = 0;
         // If OpenGL, return handle.
         // If DX, return pointer to a buffer that contains the shader data. 
-        virtual void* GetFunction(void) = 0;
+        virtual void* GetFunction(void) const = 0;
 
-        virtual char* GetCompiledLog(void) = 0;
+        //virtual char* GetCompiledLog(void) = 0;
         // D3DCONSTANTTABLE like.
-        virtual Unify3DConstantTable* GetConstantTable(void) = 0;
+        //virtual Unify3DConstantTable* GetConstantTable(void) = 0;
     };
+
+    class IUnify3DFragmentShader
+    {
+    public:
+        virtual IUnify3DDeviceCG* GetDevice(void) const = 0;
+        // If OpenGL, return handle.
+        // If DX, return pointer to a buffer that contains the shader data. 
+        virtual void* GetFunction(void) const = 0;
+
+        //virtual char* GetCompiledLog(void) = 0;
+        // D3DCONSTANTTABLE like.
+        //virtual Unify3DConstantTable* GetConstantTable(void) = 0;
+    };
+
 
     // IDirect3DDevice9 like.
     class IUnify3DDeviceCG
@@ -178,12 +210,18 @@ namespace KonTiKi
         virtual bool CreateVertexDataBuffer(IVertexDataBuffer::Type type, unsigned size, void* data
             , IVertexDataBuffer::Usage usage, IVertexDataBuffer** ppVertexDataBuffer) = 0;
 
-        virtual bool SetStreamSource(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride) = 0;
 
-        virtual bool SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl) = 0;
+        virtual bool CreateVertexDeclaration (Unify3DVertexElementCG* pVertexElements, unsigned numElements, IUnify3DVertexDeclaration** ppDecl);
 
-        virtual bool LoadVertexShaderFromMemory(const char* shaderSrc, IUnify3DVertexShader* pShader) = 0;
+        virtual bool SetVertices(unsigned streamNum, IVertexDataBuffer* pStreamData, unsigned offsetInByte, unsigned stride, IUnify3DVertexDeclaration* pDecl) = 0;
+
+        //virtual bool SetVertexDeclaration(IUnify3DVertexDeclaration* pDecl) = 0;
+
+        virtual bool LoadVertexShaderFromMemory(const char* shaderSrc, IUnify3DVertexShader** pShader) = 0;
         virtual bool SetVertexShader(IUnify3DVertexShader* pShader) = 0;
+
+        virtual bool LoadFragmentShaderFromMemory(const char* shaderSrc, IUnify3DFragmentShader** pShader) = 0;
+        virtual bool SetFragmentShader(IUnify3DFragmentShader* pShader) = 0;
 
         virtual bool SetIndices(IVertexDataBuffer* pIndexData) = 0;
 
